@@ -1,0 +1,1346 @@
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoStubImpl
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoVersionImpl
+android.support.v4.accessibilityservice.AccessibilityServiceInfoCompatIcs
+android.support.v4.app.ActivityCompat
+android.support.v4.app.ActivityCompatHoneycomb:
+    27:27:ActivityCompatHoneycomb()
+    34:35:static void dump(android.app.Activity,java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+android.support.v4.app.BackStackRecord:
+    static final java.lang.String TAG
+    static final int OP_NULL
+    static final int OP_ADD
+    static final int OP_REPLACE
+    static final int OP_REMOVE
+    static final int OP_HIDE
+    static final int OP_SHOW
+    static final int OP_DETACH
+    static final int OP_ATTACH
+    338:338:public int getId()
+    342:342:public int getBreadCrumbTitleRes()
+    346:346:public int getBreadCrumbShortTitleRes()
+    350:353:public java.lang.CharSequence getBreadCrumbTitle()
+    357:360:public java.lang.CharSequence getBreadCrumbShortTitle()
+    379:380:public android.support.v4.app.FragmentTransaction add(android.support.v4.app.Fragment,java.lang.String)
+    384:385:public android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment)
+    389:390:public android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment,java.lang.String)
+    394:418:private void doAddOp(int,android.support.v4.app.Fragment,java.lang.String,int)
+    421:421:public android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment)
+    425:430:public android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment,java.lang.String)
+    434:439:public android.support.v4.app.FragmentTransaction remove(android.support.v4.app.Fragment)
+    443:448:public android.support.v4.app.FragmentTransaction hide(android.support.v4.app.Fragment)
+    452:457:public android.support.v4.app.FragmentTransaction show(android.support.v4.app.Fragment)
+    461:466:public android.support.v4.app.FragmentTransaction detach(android.support.v4.app.Fragment)
+    470:475:public android.support.v4.app.FragmentTransaction attach(android.support.v4.app.Fragment)
+    479:479:public android.support.v4.app.FragmentTransaction setCustomAnimations(int,int)
+    484:488:public android.support.v4.app.FragmentTransaction setCustomAnimations(int,int,int,int)
+    492:493:public android.support.v4.app.FragmentTransaction setTransition(int)
+    497:498:public android.support.v4.app.FragmentTransaction setTransitionStyle(int)
+    502:508:public android.support.v4.app.FragmentTransaction addToBackStack(java.lang.String)
+    512:512:public boolean isAddToBackStackAllowed()
+    516:521:public android.support.v4.app.FragmentTransaction disallowAddToBackStack()
+    525:527:public android.support.v4.app.FragmentTransaction setBreadCrumbTitle(int)
+    531:533:public android.support.v4.app.FragmentTransaction setBreadCrumbTitle(java.lang.CharSequence)
+    537:539:public android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(int)
+    543:545:public android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence)
+    574:574:public int commit()
+    578:578:public int commitAllowingStateLoss()
+    582:596:int commitInternal(boolean)
+    779:779:public int getTransition()
+    783:783:public int getTransitionStyle()
+    787:787:public boolean isEmpty()
+android.support.v4.app.DialogFragment
+android.support.v4.app.Fragment$SavedState:
+    301:303:Fragment$SavedState(android.os.Bundle)
+android.support.v4.app.FragmentActivity:
+    private static final java.lang.String TAG
+    static final java.lang.String FRAGMENTS_TAG
+    private static final int HONEYCOMB
+    static final int MSG_REALLY_STOPPED
+    static final int MSG_RESUME_PENDING
+    70:129:public FragmentActivity()
+    612:614:public java.lang.Object getLastCustomNonConfigurationInstance()
+    805:805:public android.support.v4.app.FragmentManager getSupportFragmentManager()
+    854:859:public android.support.v4.app.LoaderManager getSupportLoaderManager()
+android.support.v4.app.FragmentActivity$1
+android.support.v4.app.FragmentActivity$2
+android.support.v4.app.FragmentActivity$FragmentTag:
+    public static final int Fragment_id
+    public static final int Fragment_name
+    public static final int Fragment_tag
+    129:129:FragmentActivity$FragmentTag()
+android.support.v4.app.FragmentManager:
+    public static final int POP_BACK_STACK_INCLUSIVE
+    public abstract android.support.v4.app.FragmentTransaction beginTransaction()
+    139:139:public android.support.v4.app.FragmentTransaction openTransaction()
+    public abstract boolean executePendingTransactions()
+    public abstract android.support.v4.app.Fragment findFragmentById(int)
+    public abstract android.support.v4.app.Fragment findFragmentByTag(java.lang.String)
+    public abstract void popBackStack()
+    public abstract boolean popBackStackImmediate()
+    public abstract void popBackStack(java.lang.String,int)
+    public abstract boolean popBackStackImmediate(java.lang.String,int)
+    public abstract void popBackStack(int,int)
+    public abstract boolean popBackStackImmediate(int,int)
+    public abstract int getBackStackEntryCount()
+    public abstract android.support.v4.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
+    public abstract void addOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void putFragment(android.os.Bundle,java.lang.String,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.Fragment getFragment(android.os.Bundle,java.lang.String)
+    public abstract android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
+    public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    334:335:public static void enableDebugLogging(boolean)
+android.support.v4.app.FragmentManager$BackStackEntry
+android.support.v4.app.FragmentManagerImpl:
+    static final java.lang.String TAG
+    static final java.lang.String TARGET_REQUEST_CODE_STATE_TAG
+    static final java.lang.String TARGET_STATE_TAG
+    static final java.lang.String VIEW_STATE_TAG
+    static final java.lang.String USER_VISIBLE_HINT_TAG
+    static final int ANIM_DUR
+    public static final int ANIM_STYLE_OPEN_ENTER
+    public static final int ANIM_STYLE_OPEN_EXIT
+    public static final int ANIM_STYLE_CLOSE_ENTER
+    public static final int ANIM_STYLE_CLOSE_EXIT
+    public static final int ANIM_STYLE_FADE_ENTER
+    public static final int ANIM_STYLE_FADE_EXIT
+    456:456:public android.support.v4.app.FragmentTransaction beginTransaction()
+    466:471:public void popBackStack()
+    482:487:public void popBackStack(java.lang.String,int)
+    491:493:public boolean popBackStackImmediate(java.lang.String,int)
+    498:506:public void popBackStack(int,int)
+    510:515:public boolean popBackStackImmediate(int,int)
+    520:520:public int getBackStackEntryCount()
+    525:525:public android.support.v4.app.FragmentManager$BackStackEntry getBackStackEntryAt(int)
+    530:534:public void addOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    538:541:public void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    572:580:public android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
+    1337:1353:public void enqueueAction(java.lang.Runnable,boolean)
+    1356:1372:public int allocBackStackIndex(android.support.v4.app.BackStackRecord)
+android.support.v4.app.FragmentManagerImpl$2
+android.support.v4.app.FragmentManagerImpl$3
+android.support.v4.app.FragmentManagerImpl$4
+android.support.v4.app.FragmentPagerAdapter
+android.support.v4.app.FragmentStatePagerAdapter
+android.support.v4.app.FragmentTabHost
+android.support.v4.app.FragmentTabHost$1
+android.support.v4.app.FragmentTabHost$DummyTabFactory
+android.support.v4.app.FragmentTabHost$SavedState
+android.support.v4.app.FragmentTabHost$SavedState$1
+android.support.v4.app.FragmentTabHost$TabInfo
+android.support.v4.app.FragmentTransaction:
+    public static final int TRANSIT_ENTER_MASK
+    public static final int TRANSIT_EXIT_MASK
+    public static final int TRANSIT_UNSET
+    public static final int TRANSIT_NONE
+    public static final int TRANSIT_FRAGMENT_OPEN
+    public static final int TRANSIT_FRAGMENT_CLOSE
+    public static final int TRANSIT_FRAGMENT_FADE
+    public abstract android.support.v4.app.FragmentTransaction add(android.support.v4.app.Fragment,java.lang.String)
+    public abstract android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction add(int,android.support.v4.app.Fragment,java.lang.String)
+    public abstract android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction replace(int,android.support.v4.app.Fragment,java.lang.String)
+    public abstract android.support.v4.app.FragmentTransaction remove(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction hide(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction show(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction detach(android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.FragmentTransaction attach(android.support.v4.app.Fragment)
+    public abstract boolean isEmpty()
+    public abstract android.support.v4.app.FragmentTransaction setCustomAnimations(int,int)
+    public abstract android.support.v4.app.FragmentTransaction setCustomAnimations(int,int,int,int)
+    public abstract android.support.v4.app.FragmentTransaction setTransition(int)
+    public abstract android.support.v4.app.FragmentTransaction setTransitionStyle(int)
+    public abstract android.support.v4.app.FragmentTransaction addToBackStack(java.lang.String)
+    public abstract boolean isAddToBackStackAllowed()
+    public abstract android.support.v4.app.FragmentTransaction disallowAddToBackStack()
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbTitle(int)
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbTitle(java.lang.CharSequence)
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(int)
+    public abstract android.support.v4.app.FragmentTransaction setBreadCrumbShortTitle(java.lang.CharSequence)
+    public abstract int commit()
+    public abstract int commitAllowingStateLoss()
+android.support.v4.app.ListFragment
+android.support.v4.app.ListFragment$1
+android.support.v4.app.ListFragment$2
+android.support.v4.app.LoaderManager:
+    public abstract android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    public abstract android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    public abstract void destroyLoader(int)
+    public abstract android.support.v4.content.Loader getLoader(int)
+    public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
+    177:178:public static void enableDebugLogging(boolean)
+android.support.v4.app.LoaderManagerImpl:
+    static final java.lang.String TAG
+    boolean mRetainingStarted
+    boolean mCreatingLoader
+    489:492:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    498:503:private android.support.v4.app.LoaderManagerImpl$LoaderInfo createAndInstallLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    508:515:void installLoader(android.support.v4.app.LoaderManagerImpl$LoaderInfo)
+    543:565:public android.support.v4.content.Loader initLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    593:647:public android.support.v4.content.Loader restartLoader(int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    658:678:public void destroyLoader(int)
+    686:697:public android.support.v4.content.Loader getLoader(int)
+android.support.v4.app.LoaderManagerImpl$LoaderInfo:
+    228:232:public LoaderManagerImpl$LoaderInfo(android.support.v4.app.LoaderManagerImpl,int,android.os.Bundle,android.support.v4.app.LoaderManager$LoaderCallbacks)
+    362:415:public void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
+android.support.v4.app.NavUtils
+android.support.v4.app.NavUtils$NavUtilsImpl
+android.support.v4.app.NavUtils$NavUtilsImplBase
+android.support.v4.app.NavUtils$NavUtilsImplJB
+android.support.v4.app.NavUtilsJB
+android.support.v4.app.NotificationCompat
+android.support.v4.app.NotificationCompat$Action
+android.support.v4.app.NotificationCompat$BigPictureStyle
+android.support.v4.app.NotificationCompat$BigTextStyle
+android.support.v4.app.NotificationCompat$Builder
+android.support.v4.app.NotificationCompat$InboxStyle
+android.support.v4.app.NotificationCompat$NotificationCompatImpl
+android.support.v4.app.NotificationCompat$NotificationCompatImplBase
+android.support.v4.app.NotificationCompat$NotificationCompatImplHoneycomb
+android.support.v4.app.NotificationCompat$NotificationCompatImplIceCreamSandwich
+android.support.v4.app.NotificationCompat$NotificationCompatImplJellybean
+android.support.v4.app.NotificationCompat$Style
+android.support.v4.app.NotificationCompatHoneycomb
+android.support.v4.app.NotificationCompatIceCreamSandwich
+android.support.v4.app.NotificationCompatJellybean
+android.support.v4.app.ServiceCompat
+android.support.v4.app.ShareCompat
+android.support.v4.app.ShareCompat$IntentBuilder
+android.support.v4.app.ShareCompat$IntentReader
+android.support.v4.app.ShareCompat$ShareCompatImpl
+android.support.v4.app.ShareCompat$ShareCompatImplBase
+android.support.v4.app.ShareCompat$ShareCompatImplICS
+android.support.v4.app.ShareCompat$ShareCompatImplJB
+android.support.v4.app.ShareCompatICS
+android.support.v4.app.ShareCompatJB
+android.support.v4.app.TaskStackBuilder
+android.support.v4.app.TaskStackBuilder$TaskStackBuilderImpl
+android.support.v4.app.TaskStackBuilder$TaskStackBuilderImplBase
+android.support.v4.app.TaskStackBuilder$TaskStackBuilderImplHoneycomb
+android.support.v4.app.TaskStackBuilder$TaskStackBuilderImplJellybean
+android.support.v4.app.TaskStackBuilderHoneycomb
+android.support.v4.app.TaskStackBuilderJellybean
+android.support.v4.content.AsyncTaskLoader
+android.support.v4.content.AsyncTaskLoader$LoadTask
+android.support.v4.content.ContextCompat
+android.support.v4.content.ContextCompatHoneycomb
+android.support.v4.content.ContextCompatJellybean
+android.support.v4.content.CursorLoader
+android.support.v4.content.IntentCompat
+android.support.v4.content.IntentCompat$IntentCompatImpl
+android.support.v4.content.IntentCompat$IntentCompatImplBase
+android.support.v4.content.IntentCompat$IntentCompatImplHC
+android.support.v4.content.IntentCompat$IntentCompatImplIcsMr1
+android.support.v4.content.IntentCompatHoneycomb
+android.support.v4.content.IntentCompatIcsMr1
+android.support.v4.content.Loader:
+    android.content.Context mContext
+    38:92:public Loader(android.content.Context)
+    102:105:public void deliverResult(java.lang.Object)
+    111:111:public android.content.Context getContext()
+    118:118:public int getId()
+    157:157:public boolean isStarted()
+    166:166:public boolean isAbandoned()
+    175:175:public boolean isReset()
+    217:218:public void forceLoad()
+    225:225:protected void onForceLoad()
+    261:263:public void abandon()
+    275:275:protected void onAbandon()
+    312:314:public boolean takeContentChanged()
+    326:334:public void onContentChanged()
+android.support.v4.content.Loader$ForceLoadContentObserver
+android.support.v4.content.Loader$OnLoadCompleteListener:
+    public abstract void onLoadComplete(android.support.v4.content.Loader,java.lang.Object)
+android.support.v4.content.LocalBroadcastManager
+android.support.v4.content.LocalBroadcastManager$1
+android.support.v4.content.LocalBroadcastManager$BroadcastRecord
+android.support.v4.content.LocalBroadcastManager$ReceiverRecord
+android.support.v4.content.ModernAsyncTask
+android.support.v4.content.ModernAsyncTask$1
+android.support.v4.content.ModernAsyncTask$2
+android.support.v4.content.ModernAsyncTask$3
+android.support.v4.content.ModernAsyncTask$4
+android.support.v4.content.ModernAsyncTask$AsyncTaskResult
+android.support.v4.content.ModernAsyncTask$InternalHandler
+android.support.v4.content.ModernAsyncTask$Status
+android.support.v4.content.ModernAsyncTask$WorkerRunnable
+android.support.v4.content.pm.ActivityInfoCompat
+android.support.v4.database.DatabaseUtilsCompat
+android.support.v4.net.ConnectivityManagerCompat
+android.support.v4.net.ConnectivityManagerCompat$BaseConnectivityManagerCompatImpl
+android.support.v4.net.ConnectivityManagerCompat$ConnectivityManagerCompatImpl
+android.support.v4.net.ConnectivityManagerCompat$GingerbreadConnectivityManagerCompatImpl
+android.support.v4.net.ConnectivityManagerCompat$HoneycombMR2ConnectivityManagerCompatImpl
+android.support.v4.net.ConnectivityManagerCompat$JellyBeanConnectivityManagerCompatImpl
+android.support.v4.net.ConnectivityManagerCompatGingerbread
+android.support.v4.net.ConnectivityManagerCompatHoneycombMR2
+android.support.v4.net.ConnectivityManagerCompatJellyBean
+android.support.v4.net.TrafficStatsCompat
+android.support.v4.net.TrafficStatsCompat$1
+android.support.v4.net.TrafficStatsCompat$BaseTrafficStatsCompatImpl
+android.support.v4.net.TrafficStatsCompat$BaseTrafficStatsCompatImpl$1
+android.support.v4.net.TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags
+android.support.v4.net.TrafficStatsCompat$IcsTrafficStatsCompatImpl
+android.support.v4.net.TrafficStatsCompat$TrafficStatsCompatImpl
+android.support.v4.net.TrafficStatsCompatIcs
+android.support.v4.os.ParcelableCompat
+android.support.v4.os.ParcelableCompat$CompatCreator
+android.support.v4.os.ParcelableCompatCreatorCallbacks
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2
+android.support.v4.os.ParcelableCompatCreatorHoneycombMR2Stub
+android.support.v4.util.AtomicFile
+android.support.v4.util.DebugUtils:
+    25:25:public DebugUtils()
+android.support.v4.util.LongSparseArray
+android.support.v4.util.LruCache
+android.support.v4.util.SparseArrayCompat:
+    52:52:public java.lang.Object get(int)
+    60:65:public java.lang.Object get(int,java.lang.Object)
+    73:81:public void delete(int)
+    87:88:public void remove(int)
+    94:98:public void removeAt(int)
+    107:111:public void removeAtRange(int,int)
+    146:190:public void put(int,java.lang.Object)
+    236:241:public void setValueAt(int,java.lang.Object)
+    249:253:public int indexOfKey(int)
+    265:273:public int indexOfValue(java.lang.Object)
+    296:323:public void append(int,java.lang.Object)
+    326:342:private static int binarySearch(int[],int,int,int)
+android.support.v4.util.TimeUtils
+android.support.v4.view.AccessibilityDelegateCompat
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl$1
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateImpl
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl$1
+android.support.v4.view.AccessibilityDelegateCompat$AccessibilityDelegateStubImpl
+android.support.v4.view.AccessibilityDelegateCompatIcs
+android.support.v4.view.AccessibilityDelegateCompatIcs$1
+android.support.v4.view.AccessibilityDelegateCompatIcs$AccessibilityDelegateBridge
+android.support.v4.view.AccessibilityDelegateCompatJellyBean
+android.support.v4.view.AccessibilityDelegateCompatJellyBean$1
+android.support.v4.view.AccessibilityDelegateCompatJellyBean$AccessibilityDelegateBridgeJellyBean
+android.support.v4.view.GestureDetectorCompat
+android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImpl
+android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImplBase
+android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImplBase$GestureHandler
+android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr1
+android.support.v4.view.KeyEventCompat
+android.support.v4.view.KeyEventCompat$BaseKeyEventVersionImpl
+android.support.v4.view.KeyEventCompat$HoneycombKeyEventVersionImpl
+android.support.v4.view.KeyEventCompat$KeyEventVersionImpl
+android.support.v4.view.KeyEventCompatHoneycomb
+android.support.v4.view.MenuCompat
+android.support.v4.view.MenuCompat$BaseMenuVersionImpl
+android.support.v4.view.MenuCompat$HoneycombMenuVersionImpl
+android.support.v4.view.MenuCompat$MenuVersionImpl
+android.support.v4.view.MenuItemCompat
+android.support.v4.view.MenuItemCompat$BaseMenuVersionImpl
+android.support.v4.view.MenuItemCompat$HoneycombMenuVersionImpl
+android.support.v4.view.MenuItemCompat$MenuVersionImpl
+android.support.v4.view.MenuItemCompatHoneycomb
+android.support.v4.view.MotionEventCompat
+android.support.v4.view.MotionEventCompat$BaseMotionEventVersionImpl
+android.support.v4.view.MotionEventCompat$EclairMotionEventVersionImpl
+android.support.v4.view.MotionEventCompat$MotionEventVersionImpl
+android.support.v4.view.MotionEventCompatEclair
+android.support.v4.view.PagerAdapter
+android.support.v4.view.PagerTabStrip
+android.support.v4.view.PagerTabStrip$1
+android.support.v4.view.PagerTabStrip$2
+android.support.v4.view.PagerTitleStrip
+android.support.v4.view.PagerTitleStrip$1
+android.support.v4.view.PagerTitleStrip$PageListener
+android.support.v4.view.PagerTitleStrip$PagerTitleStripImpl
+android.support.v4.view.PagerTitleStrip$PagerTitleStripImplBase
+android.support.v4.view.PagerTitleStrip$PagerTitleStripImplIcs
+android.support.v4.view.PagerTitleStripIcs
+android.support.v4.view.PagerTitleStripIcs$SingleLineAllCapsTransform
+android.support.v4.view.VelocityTrackerCompat
+android.support.v4.view.VelocityTrackerCompat$BaseVelocityTrackerVersionImpl
+android.support.v4.view.VelocityTrackerCompat$HoneycombVelocityTrackerVersionImpl
+android.support.v4.view.VelocityTrackerCompat$VelocityTrackerVersionImpl
+android.support.v4.view.VelocityTrackerCompatHoneycomb
+android.support.v4.view.ViewCompat
+android.support.v4.view.ViewCompat$BaseViewCompatImpl
+android.support.v4.view.ViewCompat$GBViewCompatImpl
+android.support.v4.view.ViewCompat$HCViewCompatImpl
+android.support.v4.view.ViewCompat$ICSViewCompatImpl
+android.support.v4.view.ViewCompat$JBViewCompatImpl
+android.support.v4.view.ViewCompat$JbMr1ViewCompatImpl
+android.support.v4.view.ViewCompat$ViewCompatImpl
+android.support.v4.view.ViewCompatGingerbread
+android.support.v4.view.ViewCompatHC
+android.support.v4.view.ViewCompatICS
+android.support.v4.view.ViewCompatJB
+android.support.v4.view.ViewCompatJellybeanMr1
+android.support.v4.view.ViewConfigurationCompat
+android.support.v4.view.ViewConfigurationCompat$BaseViewConfigurationVersionImpl
+android.support.v4.view.ViewConfigurationCompat$FroyoViewConfigurationVersionImpl
+android.support.v4.view.ViewConfigurationCompat$ViewConfigurationVersionImpl
+android.support.v4.view.ViewConfigurationCompatFroyo
+android.support.v4.view.ViewGroupCompat
+android.support.v4.view.ViewGroupCompat$ViewGroupCompatIcsImpl
+android.support.v4.view.ViewGroupCompat$ViewGroupCompatImpl
+android.support.v4.view.ViewGroupCompat$ViewGroupCompatStubImpl
+android.support.v4.view.ViewGroupCompatIcs
+android.support.v4.view.ViewPager
+android.support.v4.view.ViewPager$1
+android.support.v4.view.ViewPager$2
+android.support.v4.view.ViewPager$3
+android.support.v4.view.ViewPager$Decor
+android.support.v4.view.ViewPager$ItemInfo
+android.support.v4.view.ViewPager$LayoutParams
+android.support.v4.view.ViewPager$MyAccessibilityDelegate
+android.support.v4.view.ViewPager$OnAdapterChangeListener
+android.support.v4.view.ViewPager$OnPageChangeListener
+android.support.v4.view.ViewPager$PageTransformer
+android.support.v4.view.ViewPager$PagerObserver
+android.support.v4.view.ViewPager$SavedState
+android.support.v4.view.ViewPager$SavedState$1
+android.support.v4.view.ViewPager$SimpleOnPageChangeListener
+android.support.v4.view.ViewPager$ViewPositionComparator
+android.support.v4.view.accessibility.AccessibilityEventCompat
+android.support.v4.view.accessibility.AccessibilityEventCompat$AccessibilityEventIcsImpl
+android.support.v4.view.accessibility.AccessibilityEventCompat$AccessibilityEventStubImpl
+android.support.v4.view.accessibility.AccessibilityEventCompat$AccessibilityEventVersionImpl
+android.support.v4.view.accessibility.AccessibilityEventCompatIcs
+android.support.v4.view.accessibility.AccessibilityManagerCompat
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerIcsImpl
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerIcsImpl$1
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerStubImpl
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerVersionImpl
+android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs$1
+android.support.v4.view.accessibility.AccessibilityManagerCompatIcs$AccessibilityStateChangeListenerBridge
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoIcsImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoJellybeanImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompat$AccessibilityNodeInfoStubImpl
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatIcs
+android.support.v4.view.accessibility.AccessibilityNodeInfoCompatJellyBean
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean$1
+android.support.v4.view.accessibility.AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge
+android.support.v4.view.accessibility.AccessibilityRecordCompat
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordIcsImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRecordStubImpl
+android.support.v4.view.accessibility.AccessibilityRecordCompatIcs
+android.support.v4.view.accessibility.AccessibilityRecordCompatIcsMr1
+android.support.v4.view.accessibility.AccessibilityRecordCompatJellyBean
+android.support.v4.widget.CursorAdapter
+android.support.v4.widget.CursorAdapter$1
+android.support.v4.widget.CursorAdapter$ChangeObserver
+android.support.v4.widget.CursorAdapter$MyDataSetObserver
+android.support.v4.widget.CursorFilter
+android.support.v4.widget.CursorFilter$CursorFilterClient
+android.support.v4.widget.EdgeEffectCompat
+android.support.v4.widget.EdgeEffectCompat$BaseEdgeEffectImpl
+android.support.v4.widget.EdgeEffectCompat$EdgeEffectIcsImpl
+android.support.v4.widget.EdgeEffectCompat$EdgeEffectImpl
+android.support.v4.widget.EdgeEffectCompatIcs
+android.support.v4.widget.ResourceCursorAdapter
+android.support.v4.widget.ScrollerCompat
+android.support.v4.widget.ScrollerCompat$ScrollerCompatImplIcs
+android.support.v4.widget.ScrollerCompatIcs
+android.support.v4.widget.SearchViewCompat
+android.support.v4.widget.SearchViewCompat$OnQueryTextListenerCompat
+android.support.v4.widget.SearchViewCompat$SearchViewCompatHoneycombImpl
+android.support.v4.widget.SearchViewCompat$SearchViewCompatHoneycombImpl$1
+android.support.v4.widget.SearchViewCompat$SearchViewCompatImpl
+android.support.v4.widget.SearchViewCompat$SearchViewCompatStubImpl
+android.support.v4.widget.SearchViewCompatHoneycomb
+android.support.v4.widget.SearchViewCompatHoneycomb$1
+android.support.v4.widget.SearchViewCompatHoneycomb$OnQueryTextListenerCompatBridge
+android.support.v4.widget.SimpleCursorAdapter
+android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
+android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+com.ads.puzzle.flag.Answer:
+    public static final int GATE_MAX
+    public static final int GRADE_1
+    public static final int GRADE_2
+    public static final int GRADE_3
+    public static final int GRADE_4
+    9:9:public Answer()
+com.ads.puzzle.flag.Assets:
+    33:33:public Assets()
+com.ads.puzzle.flag.Settings:
+    19:19:public Settings()
+com.ads.puzzle.flag.actors.Area:
+    88:89:public void setId(int)
+com.ads.puzzle.flag.actors.Gate:
+    27:27:public int getId()
+com.ads.puzzle.flag.android.AndroidLauncher:
+    public static final int BUYSTARNUM
+    private static final java.lang.String host
+    private static final java.lang.String accessKey
+    private static final java.lang.String secretKey
+    private static final java.lang.String bucket
+    private static final java.lang.String path
+com.ads.puzzle.flag.android.BuildConfig
+com.ads.puzzle.flag.android.PEventImpl:
+    private static final java.lang.String adsUrl
+    private static final java.lang.String gameUrl
+    public static final java.lang.String SHARE_TITLE
+    public static final java.lang.String SHARE_TEXT
+com.ads.puzzle.flag.android.R:
+    10:192:public R()
+com.ads.puzzle.flag.controller.IController:
+    public static final java.lang.String AREA_CTRL
+    public static final java.lang.String CHALLENGE_CTRL
+    public static final java.lang.String PIECE_CTRL
+    public static final java.lang.String SMALLPIECE_CTRL
+    public abstract void handler()
+com.esotericsoftware.tablelayout.BaseTableLayout$Debug:
+    44:44:public static com.esotericsoftware.tablelayout.BaseTableLayout$Debug[] values()
+    44:44:public static com.esotericsoftware.tablelayout.BaseTableLayout$Debug valueOf(java.lang.String)
+com.esotericsoftware.tablelayout.Cell:
+    129:129:public boolean hasWidget()
+    134:140:public com.esotericsoftware.tablelayout.Cell size(com.esotericsoftware.tablelayout.Value)
+    145:151:public com.esotericsoftware.tablelayout.Cell size(com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value)
+    156:157:public com.esotericsoftware.tablelayout.Cell size(float)
+    162:163:public com.esotericsoftware.tablelayout.Cell size(float,float)
+    168:171:public com.esotericsoftware.tablelayout.Cell width(com.esotericsoftware.tablelayout.Value)
+    176:177:public com.esotericsoftware.tablelayout.Cell width(float)
+    182:185:public com.esotericsoftware.tablelayout.Cell height(com.esotericsoftware.tablelayout.Value)
+    190:191:public com.esotericsoftware.tablelayout.Cell height(float)
+    196:198:public com.esotericsoftware.tablelayout.Cell minSize(com.esotericsoftware.tablelayout.Value)
+    203:205:public com.esotericsoftware.tablelayout.Cell minSize(com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value)
+    209:210:public com.esotericsoftware.tablelayout.Cell minWidth(com.esotericsoftware.tablelayout.Value)
+    214:215:public com.esotericsoftware.tablelayout.Cell minHeight(com.esotericsoftware.tablelayout.Value)
+    220:222:public com.esotericsoftware.tablelayout.Cell minSize(float)
+    227:229:public com.esotericsoftware.tablelayout.Cell minSize(float,float)
+    233:234:public com.esotericsoftware.tablelayout.Cell minWidth(float)
+    238:239:public com.esotericsoftware.tablelayout.Cell minHeight(float)
+    244:246:public com.esotericsoftware.tablelayout.Cell prefSize(com.esotericsoftware.tablelayout.Value)
+    251:253:public com.esotericsoftware.tablelayout.Cell prefSize(com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value)
+    257:258:public com.esotericsoftware.tablelayout.Cell prefWidth(com.esotericsoftware.tablelayout.Value)
+    262:263:public com.esotericsoftware.tablelayout.Cell prefHeight(com.esotericsoftware.tablelayout.Value)
+    268:270:public com.esotericsoftware.tablelayout.Cell prefSize(float,float)
+    275:277:public com.esotericsoftware.tablelayout.Cell prefSize(float)
+    281:282:public com.esotericsoftware.tablelayout.Cell prefWidth(float)
+    286:287:public com.esotericsoftware.tablelayout.Cell prefHeight(float)
+    292:294:public com.esotericsoftware.tablelayout.Cell maxSize(com.esotericsoftware.tablelayout.Value)
+    299:301:public com.esotericsoftware.tablelayout.Cell maxSize(com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value)
+    305:306:public com.esotericsoftware.tablelayout.Cell maxWidth(com.esotericsoftware.tablelayout.Value)
+    310:311:public com.esotericsoftware.tablelayout.Cell maxHeight(com.esotericsoftware.tablelayout.Value)
+    316:318:public com.esotericsoftware.tablelayout.Cell maxSize(float)
+    323:325:public com.esotericsoftware.tablelayout.Cell maxSize(float,float)
+    329:330:public com.esotericsoftware.tablelayout.Cell maxWidth(float)
+    334:335:public com.esotericsoftware.tablelayout.Cell maxHeight(float)
+    340:344:public com.esotericsoftware.tablelayout.Cell space(com.esotericsoftware.tablelayout.Value)
+    348:352:public com.esotericsoftware.tablelayout.Cell space(com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value)
+    356:357:public com.esotericsoftware.tablelayout.Cell spaceTop(com.esotericsoftware.tablelayout.Value)
+    361:362:public com.esotericsoftware.tablelayout.Cell spaceLeft(com.esotericsoftware.tablelayout.Value)
+    366:367:public com.esotericsoftware.tablelayout.Cell spaceBottom(com.esotericsoftware.tablelayout.Value)
+    371:372:public com.esotericsoftware.tablelayout.Cell spaceRight(com.esotericsoftware.tablelayout.Value)
+    387:395:public com.esotericsoftware.tablelayout.Cell space(float,float,float,float)
+    399:401:public com.esotericsoftware.tablelayout.Cell spaceTop(float)
+    405:407:public com.esotericsoftware.tablelayout.Cell spaceLeft(float)
+    411:413:public com.esotericsoftware.tablelayout.Cell spaceBottom(float)
+    417:419:public com.esotericsoftware.tablelayout.Cell spaceRight(float)
+    424:428:public com.esotericsoftware.tablelayout.Cell pad(com.esotericsoftware.tablelayout.Value)
+    432:436:public com.esotericsoftware.tablelayout.Cell pad(com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value,com.esotericsoftware.tablelayout.Value)
+    440:441:public com.esotericsoftware.tablelayout.Cell padTop(com.esotericsoftware.tablelayout.Value)
+    445:446:public com.esotericsoftware.tablelayout.Cell padLeft(com.esotericsoftware.tablelayout.Value)
+    450:451:public com.esotericsoftware.tablelayout.Cell padBottom(com.esotericsoftware.tablelayout.Value)
+    455:456:public com.esotericsoftware.tablelayout.Cell padRight(com.esotericsoftware.tablelayout.Value)
+    461:466:public com.esotericsoftware.tablelayout.Cell pad(float)
+    470:474:public com.esotericsoftware.tablelayout.Cell pad(float,float,float,float)
+    478:479:public com.esotericsoftware.tablelayout.Cell padTop(float)
+    483:484:public com.esotericsoftware.tablelayout.Cell padLeft(float)
+    488:489:public com.esotericsoftware.tablelayout.Cell padBottom(float)
+    493:494:public com.esotericsoftware.tablelayout.Cell padRight(float)
+    506:507:public com.esotericsoftware.tablelayout.Cell fillX()
+    512:513:public com.esotericsoftware.tablelayout.Cell fillY()
+    517:519:public com.esotericsoftware.tablelayout.Cell fill(java.lang.Float,java.lang.Float)
+    524:526:public com.esotericsoftware.tablelayout.Cell fill(boolean,boolean)
+    531:533:public com.esotericsoftware.tablelayout.Cell fill(boolean)
+    539:540:public com.esotericsoftware.tablelayout.Cell align(java.lang.Integer)
+    545:546:public com.esotericsoftware.tablelayout.Cell center()
+    551:557:public com.esotericsoftware.tablelayout.Cell top()
+    562:568:public com.esotericsoftware.tablelayout.Cell left()
+    573:579:public com.esotericsoftware.tablelayout.Cell bottom()
+    584:590:public com.esotericsoftware.tablelayout.Cell right()
+    602:603:public com.esotericsoftware.tablelayout.Cell expandX()
+    608:609:public com.esotericsoftware.tablelayout.Cell expandY()
+    613:615:public com.esotericsoftware.tablelayout.Cell expand(java.lang.Integer,java.lang.Integer)
+    620:622:public com.esotericsoftware.tablelayout.Cell expand(boolean,boolean)
+    626:627:public com.esotericsoftware.tablelayout.Cell ignore(java.lang.Boolean)
+    632:633:public com.esotericsoftware.tablelayout.Cell ignore()
+    641:642:public com.esotericsoftware.tablelayout.Cell colspan(java.lang.Integer)
+    647:649:public com.esotericsoftware.tablelayout.Cell uniform()
+    654:655:public com.esotericsoftware.tablelayout.Cell uniformX()
+    660:661:public com.esotericsoftware.tablelayout.Cell uniformY()
+    665:667:public com.esotericsoftware.tablelayout.Cell uniform(java.lang.Boolean,java.lang.Boolean)
+    682:683:public void setWidgetX(float)
+    698:699:public void setWidgetWidth(float)
+    706:707:public void setWidgetHeight(float)
+    710:710:public int getColumn()
+    714:714:public int getRow()
+    719:719:public com.esotericsoftware.tablelayout.Value getMinWidthValue()
+    723:723:public float getMinWidth()
+    728:728:public com.esotericsoftware.tablelayout.Value getMinHeightValue()
+    732:732:public float getMinHeight()
+    737:737:public com.esotericsoftware.tablelayout.Value getPrefWidthValue()
+    741:741:public float getPrefWidth()
+    746:746:public com.esotericsoftware.tablelayout.Value getPrefHeightValue()
+    750:750:public float getPrefHeight()
+    755:755:public com.esotericsoftware.tablelayout.Value getMaxWidthValue()
+    759:759:public float getMaxWidth()
+    764:764:public com.esotericsoftware.tablelayout.Value getMaxHeightValue()
+    768:768:public float getMaxHeight()
+    773:773:public com.esotericsoftware.tablelayout.Value getSpaceTopValue()
+    777:777:public float getSpaceTop()
+    782:782:public com.esotericsoftware.tablelayout.Value getSpaceLeftValue()
+    786:786:public float getSpaceLeft()
+    791:791:public com.esotericsoftware.tablelayout.Value getSpaceBottomValue()
+    795:795:public float getSpaceBottom()
+    800:800:public com.esotericsoftware.tablelayout.Value getSpaceRightValue()
+    804:804:public float getSpaceRight()
+    809:809:public com.esotericsoftware.tablelayout.Value getPadTopValue()
+    813:813:public float getPadTop()
+    818:818:public com.esotericsoftware.tablelayout.Value getPadLeftValue()
+    822:822:public float getPadLeft()
+    827:827:public com.esotericsoftware.tablelayout.Value getPadBottomValue()
+    831:831:public float getPadBottom()
+    836:836:public com.esotericsoftware.tablelayout.Value getPadRightValue()
+    840:840:public float getPadRight()
+    845:845:public java.lang.Float getFillX()
+    850:850:public java.lang.Float getFillY()
+    855:855:public java.lang.Integer getAlign()
+    860:860:public java.lang.Integer getExpandX()
+    865:865:public java.lang.Integer getExpandY()
+    870:870:public java.lang.Integer getColspan()
+    875:875:public java.lang.Boolean getUniformX()
+    880:880:public java.lang.Boolean getUniformY()
+    885:885:public boolean isEndRow()
+    890:890:public float getComputedPadTop()
+    895:895:public float getComputedPadLeft()
+    900:900:public float getComputedPadBottom()
+    905:905:public float getComputedPadRight()
+    909:909:public com.esotericsoftware.tablelayout.Cell row()
+    913:913:public com.esotericsoftware.tablelayout.BaseTableLayout getLayout()
+com.esotericsoftware.tablelayout.Value:
+    172:172:public static com.esotericsoftware.tablelayout.Value percentWidth(float)
+    181:181:public static com.esotericsoftware.tablelayout.Value percentHeight(float)
+    190:190:public static com.esotericsoftware.tablelayout.Value percentWidth(float,java.lang.Object)
+    203:203:public static com.esotericsoftware.tablelayout.Value percentHeight(float,java.lang.Object)
+com.esotericsoftware.tablelayout.Value$10
+com.esotericsoftware.tablelayout.Value$11
+com.esotericsoftware.tablelayout.Value$8
+com.esotericsoftware.tablelayout.Value$9
+com.esotericsoftware.tablelayout.Value$FixedValue:
+    98:99:public void set(float)
+com.esotericsoftware.tablelayout.Value$TableValue
+japa.parser.ASTHelper
+japa.parser.ASTParser:
+    9790:9791:public ASTParser(java.io.InputStream)
+    9814:9815:public void ReInit(java.io.InputStream)
+    9735:9998:public ASTParser(java.io.Reader)
+    9853:9864:public void ReInit(java.io.Reader)
+    9735:9998:public ASTParser(japa.parser.ASTParserTokenManager)
+    9882:9892:public void ReInit(japa.parser.ASTParserTokenManager)
+    9961:9968:public final japa.parser.Token getNextToken()
+    10079:10079:public final void enable_tracing()
+    10083:10083:public final void disable_tracing()
+japa.parser.ASTParserConstants:
+    public static final int EOF
+    public static final int SINGLE_LINE_COMMENT
+    public static final int JAVA_DOC_COMMENT
+    public static final int MULTI_LINE_COMMENT
+    public static final int ABSTRACT
+    public static final int ASSERT
+    public static final int BOOLEAN
+    public static final int BREAK
+    public static final int BYTE
+    public static final int CASE
+    public static final int CATCH
+    public static final int CHAR
+    public static final int CLASS
+    public static final int CONST
+    public static final int CONTINUE
+    public static final int _DEFAULT
+    public static final int DO
+    public static final int DOUBLE
+    public static final int ELSE
+    public static final int ENUM
+    public static final int EXTENDS
+    public static final int FALSE
+    public static final int FINAL
+    public static final int FINALLY
+    public static final int FLOAT
+    public static final int FOR
+    public static final int GOTO
+    public static final int IF
+    public static final int IMPLEMENTS
+    public static final int IMPORT
+    public static final int INSTANCEOF
+    public static final int INT
+    public static final int INTERFACE
+    public static final int LONG
+    public static final int NATIVE
+    public static final int NEW
+    public static final int NULL
+    public static final int PACKAGE
+    public static final int PRIVATE
+    public static final int PROTECTED
+    public static final int PUBLIC
+    public static final int RETURN
+    public static final int SHORT
+    public static final int STATIC
+    public static final int STRICTFP
+    public static final int SUPER
+    public static final int SWITCH
+    public static final int SYNCHRONIZED
+    public static final int THIS
+    public static final int THROW
+    public static final int THROWS
+    public static final int TRANSIENT
+    public static final int TRUE
+    public static final int TRY
+    public static final int VOID
+    public static final int VOLATILE
+    public static final int WHILE
+    public static final int LONG_LITERAL
+    public static final int INTEGER_LITERAL
+    public static final int DECIMAL_LITERAL
+    public static final int HEX_LITERAL
+    public static final int OCTAL_LITERAL
+    public static final int FLOATING_POINT_LITERAL
+    public static final int DECIMAL_FLOATING_POINT_LITERAL
+    public static final int DECIMAL_EXPONENT
+    public static final int HEXADECIMAL_FLOATING_POINT_LITERAL
+    public static final int HEXADECIMAL_EXPONENT
+    public static final int CHARACTER_LITERAL
+    public static final int STRING_LITERAL
+    public static final int IDENTIFIER
+    public static final int LETTER
+    public static final int PART_LETTER
+    public static final int LPAREN
+    public static final int RPAREN
+    public static final int LBRACE
+    public static final int RBRACE
+    public static final int LBRACKET
+    public static final int RBRACKET
+    public static final int SEMICOLON
+    public static final int COMMA
+    public static final int DOT
+    public static final int AT
+    public static final int ASSIGN
+    public static final int LT
+    public static final int BANG
+    public static final int TILDE
+    public static final int HOOK
+    public static final int COLON
+    public static final int EQ
+    public static final int LE
+    public static final int GE
+    public static final int NE
+    public static final int SC_OR
+    public static final int SC_AND
+    public static final int INCR
+    public static final int DECR
+    public static final int PLUS
+    public static final int MINUS
+    public static final int STAR
+    public static final int SLASH
+    public static final int BIT_AND
+    public static final int BIT_OR
+    public static final int XOR
+    public static final int REM
+    public static final int LSHIFT
+    public static final int PLUSASSIGN
+    public static final int MINUSASSIGN
+    public static final int STARASSIGN
+    public static final int SLASHASSIGN
+    public static final int ANDASSIGN
+    public static final int ORASSIGN
+    public static final int XORASSIGN
+    public static final int REMASSIGN
+    public static final int LSHIFTASSIGN
+    public static final int RSIGNEDSHIFTASSIGN
+    public static final int RUNSIGNEDSHIFTASSIGN
+    public static final int ELLIPSIS
+    public static final int RUNSIGNEDSHIFT
+    public static final int RSIGNEDSHIFT
+    public static final int GT
+    public static final int DEFAULT
+    public static final int IN_JAVA_DOC_COMMENT
+    public static final int IN_MULTI_LINE_COMMENT
+japa.parser.ASTParserTokenManager:
+    77:77:public void setDebugStream(java.io.PrintStream)
+    2057:2059:public ASTParserTokenManager(japa.parser.JavaCharStream,int)
+    2080:2082:public void ReInit(japa.parser.JavaCharStream,int)
+    2087:2091:public void SwitchTo(int)
+japa.parser.JavaCharStream:
+    public static final boolean staticFlag
+    102:102:protected void setTabSize(int)
+    103:103:protected int getTabSize(int)
+    372:372:public int getColumn()
+    381:381:public int getLine()
+    431:432:public JavaCharStream(java.io.Reader,int,int)
+    437:438:public JavaCharStream(java.io.Reader)
+    464:465:public void ReInit(java.io.Reader,int,int)
+    470:471:public void ReInit(java.io.Reader)
+    483:484:public JavaCharStream(java.io.InputStream,int,int,int)
+    497:498:public JavaCharStream(java.io.InputStream,int,int)
+    503:504:public JavaCharStream(java.io.InputStream,java.lang.String)
+    509:510:public JavaCharStream(java.io.InputStream)
+    523:524:public void ReInit(java.io.InputStream,int,int,int)
+    535:536:public void ReInit(java.io.InputStream,int,int)
+    540:541:public void ReInit(java.io.InputStream,java.lang.String)
+    546:547:public void ReInit(java.io.InputStream)
+    579:583:public void Done()
+    590:631:public void adjustBeginLineColumn(int,int)
+japa.parser.JavaParser:
+    46:48:private JavaParser()
+    60:64:public static void setCacheParser(boolean)
+    107:112:public static japa.parser.ast.CompilationUnit parse(java.io.File,java.lang.String)
+    124:124:public static japa.parser.ast.CompilationUnit parse(java.io.File)
+japa.parser.Token:
+    83:83:public java.lang.Object getValue()
+    96:97:public Token(int)
+    102:106:public Token(int,java.lang.String)
+    132:132:public static japa.parser.Token newToken(int,java.lang.String)
+    138:138:public static japa.parser.Token newToken(int)
+japa.parser.TokenMgrError:
+    static final int LEXICAL_ERROR
+    static final int STATIC_LEXER_ERROR
+    static final int INVALID_LEXICAL_STATE
+    static final int LOOP_DETECTED
+japa.parser.ast.BlockComment:
+    42:43:public BlockComment(java.lang.String)
+japa.parser.ast.Comment:
+    41:43:public Comment(java.lang.String)
+    66:67:public void setContent(java.lang.String)
+japa.parser.ast.CompilationUnit:
+    70:75:public CompilationUnit(japa.parser.ast.PackageDeclaration,java.util.List,java.util.List,java.util.List)
+    153:154:public void setComments(java.util.List)
+    164:165:public void setImports(java.util.List)
+    175:176:public void setPackage(japa.parser.ast.PackageDeclaration)
+    185:186:public void setTypes(java.util.List)
+japa.parser.ast.ImportDeclaration:
+    59:63:public ImportDeclaration(japa.parser.ast.expr.NameExpr,boolean,boolean)
+    118:119:public void setAsterisk(boolean)
+    128:129:public void setName(japa.parser.ast.expr.NameExpr)
+    138:139:public void setStatic(boolean)
+japa.parser.ast.LineComment:
+    41:42:public LineComment(java.lang.String)
+japa.parser.ast.Node:
+    private java.lang.Object data
+    108:108:public final java.lang.Object getData()
+    117:117:public final int getEndColumn()
+    136:137:public final void setBeginColumn(int)
+    146:147:public final void setBeginLine(int)
+    153:154:public final void setData(java.lang.Object)
+    163:164:public final void setEndColumn(int)
+    173:174:public final void setEndLine(int)
+japa.parser.ast.PackageDeclaration:
+    60:62:public PackageDeclaration(japa.parser.ast.expr.NameExpr)
+    64:67:public PackageDeclaration(java.util.List,japa.parser.ast.expr.NameExpr)
+    109:110:public void setAnnotations(java.util.List)
+    119:120:public void setName(japa.parser.ast.expr.NameExpr)
+japa.parser.ast.TypeParameter:
+    58:61:public TypeParameter(java.lang.String,java.util.List)
+    105:106:public void setName(java.lang.String)
+    115:116:public void setTypeBound(java.util.List)
+japa.parser.ast.body.AnnotationDeclaration:
+    39:40:public AnnotationDeclaration(int,java.lang.String)
+    43:44:public AnnotationDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,java.lang.String,java.util.List)
+japa.parser.ast.body.AnnotationMemberDeclaration:
+    48:53:public AnnotationMemberDeclaration(int,japa.parser.ast.type.Type,java.lang.String,japa.parser.ast.expr.Expression)
+    56:61:public AnnotationMemberDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,japa.parser.ast.type.Type,java.lang.String,japa.parser.ast.expr.Expression)
+    104:105:public void setDefaultValue(japa.parser.ast.expr.Expression)
+    108:109:public void setModifiers(int)
+    112:113:public void setName(java.lang.String)
+    116:117:public void setType(japa.parser.ast.type.Type)
+japa.parser.ast.body.BodyDeclaration:
+    41:44:public BodyDeclaration(java.util.List,japa.parser.ast.body.JavadocComment)
+    61:62:public final void setJavaDoc(japa.parser.ast.body.JavadocComment)
+    65:66:public final void setAnnotations(java.util.List)
+japa.parser.ast.body.ClassOrInterfaceDeclaration:
+    49:51:public ClassOrInterfaceDeclaration(int,boolean,java.lang.String)
+    54:59:public ClassOrInterfaceDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,boolean,java.lang.String,java.util.List,java.util.List,java.util.List,java.util.List)
+    96:97:public void setExtends(java.util.List)
+    100:101:public void setImplements(java.util.List)
+    104:105:public void setInterface(boolean)
+    108:109:public void setTypeParameters(java.util.List)
+japa.parser.ast.body.ConstructorDeclaration:
+    53:56:public ConstructorDeclaration(int,java.lang.String)
+    59:66:public ConstructorDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,java.util.List,java.lang.String,java.util.List,java.util.List,japa.parser.ast.stmt.BlockStmt)
+    119:120:public void setBlock(japa.parser.ast.stmt.BlockStmt)
+    123:124:public void setModifiers(int)
+    127:128:public void setName(java.lang.String)
+    131:132:public void setParameters(java.util.List)
+    135:136:public void setThrows(java.util.List)
+    139:140:public void setTypeParameters(java.util.List)
+japa.parser.ast.body.EmptyMemberDeclaration:
+    36:37:public EmptyMemberDeclaration(japa.parser.ast.body.JavadocComment)
+japa.parser.ast.body.EmptyTypeDeclaration:
+    36:37:public EmptyTypeDeclaration(japa.parser.ast.body.JavadocComment)
+japa.parser.ast.body.EnumConstantDeclaration:
+    45:47:public EnumConstantDeclaration(java.lang.String)
+    50:54:public EnumConstantDeclaration(japa.parser.ast.body.JavadocComment,java.util.List,java.lang.String,java.util.List,java.util.List)
+    86:87:public void setArgs(java.util.List)
+    90:91:public void setClassBody(java.util.List)
+    94:95:public void setName(java.lang.String)
+japa.parser.ast.body.EnumDeclaration:
+    44:45:public EnumDeclaration(int,java.lang.String)
+    48:51:public EnumDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,java.lang.String,java.util.List,java.util.List,java.util.List)
+    78:79:public void setEntries(java.util.List)
+    82:83:public void setImplements(java.util.List)
+japa.parser.ast.body.FieldDeclaration:
+    46:51:public FieldDeclaration(int,japa.parser.ast.type.Type,japa.parser.ast.body.VariableDeclarator)
+    53:57:public FieldDeclaration(int,japa.parser.ast.type.Type,java.util.List)
+    60:64:public FieldDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,japa.parser.ast.type.Type,java.util.List)
+    102:103:public void setModifiers(int)
+    106:107:public void setType(japa.parser.ast.type.Type)
+    110:111:public void setVariables(java.util.List)
+japa.parser.ast.body.InitializerDeclaration:
+    40:43:public InitializerDeclaration(boolean,japa.parser.ast.stmt.BlockStmt)
+    46:49:public InitializerDeclaration(japa.parser.ast.body.JavadocComment,boolean,japa.parser.ast.stmt.BlockStmt)
+    76:77:public void setBlock(japa.parser.ast.stmt.BlockStmt)
+    80:81:public void setStatic(boolean)
+japa.parser.ast.body.JavadocComment:
+    37:38:public JavadocComment(java.lang.String)
+japa.parser.ast.body.MethodDeclaration:
+    58:62:public MethodDeclaration(int,japa.parser.ast.type.Type,java.lang.String)
+    64:69:public MethodDeclaration(int,japa.parser.ast.type.Type,java.lang.String,java.util.List)
+    72:81:public MethodDeclaration(japa.parser.ast.body.JavadocComment,int,java.util.List,java.util.List,japa.parser.ast.type.Type,java.lang.String,java.util.List,int,java.util.List,japa.parser.ast.stmt.BlockStmt)
+    144:145:public void setArrayCount(int)
+    148:149:public void setBody(japa.parser.ast.stmt.BlockStmt)
+    152:153:public void setModifiers(int)
+    156:157:public void setName(java.lang.String)
+    160:161:public void setParameters(java.util.List)
+    164:165:public void setThrows(java.util.List)
+    168:169:public void setType(japa.parser.ast.type.Type)
+    172:173:public void setTypeParameters(java.util.List)
+japa.parser.ast.body.ModifierSet:
+    public static final int PUBLIC
+    public static final int PRIVATE
+    public static final int PROTECTED
+    public static final int STATIC
+    public static final int FINAL
+    public static final int SYNCHRONIZED
+    public static final int VOLATILE
+    public static final int TRANSIENT
+    public static final int NATIVE
+    public static final int ABSTRACT
+    public static final int STRICTFP
+    118:118:public static int removeModifier(int,int)
+    121:122:private ModifierSet()
+japa.parser.ast.body.Parameter:
+    50:53:public Parameter(japa.parser.ast.type.Type,japa.parser.ast.body.VariableDeclaratorId)
+    55:59:public Parameter(int,japa.parser.ast.type.Type,japa.parser.ast.body.VariableDeclaratorId)
+    107:108:public void setAnnotations(java.util.List)
+    111:112:public void setId(japa.parser.ast.body.VariableDeclaratorId)
+    115:116:public void setModifiers(int)
+    119:120:public void setType(japa.parser.ast.type.Type)
+    123:124:public void setVarArgs(boolean)
+japa.parser.ast.body.TypeDeclaration:
+    42:45:public TypeDeclaration(int,java.lang.String)
+    48:52:public TypeDeclaration(java.util.List,japa.parser.ast.body.JavadocComment,int,java.lang.String,java.util.List)
+    80:81:public void setMembers(java.util.List)
+    84:85:public final void setModifiers(int)
+    88:89:public final void setName(java.lang.String)
+japa.parser.ast.body.VariableDeclarator:
+    41:43:public VariableDeclarator(japa.parser.ast.body.VariableDeclaratorId)
+    45:48:public VariableDeclarator(japa.parser.ast.body.VariableDeclaratorId,japa.parser.ast.expr.Expression)
+    75:76:public void setId(japa.parser.ast.body.VariableDeclaratorId)
+    79:80:public void setInit(japa.parser.ast.expr.Expression)
+japa.parser.ast.body.VariableDeclaratorId:
+    40:42:public VariableDeclaratorId(java.lang.String)
+    69:70:public void setArrayCount(int)
+    73:74:public void setName(java.lang.String)
+japa.parser.ast.expr.AnnotationExpr:
+    43:44:public void setName(japa.parser.ast.expr.NameExpr)
+japa.parser.ast.expr.ArrayAccessExpr:
+    39:42:public ArrayAccessExpr(japa.parser.ast.expr.Expression,japa.parser.ast.expr.Expression)
+    69:70:public void setIndex(japa.parser.ast.expr.Expression)
+    73:74:public void setName(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.ArrayCreationExpr:
+    46:51:public ArrayCreationExpr(japa.parser.ast.type.Type,int,japa.parser.ast.expr.ArrayInitializerExpr)
+    61:66:public ArrayCreationExpr(japa.parser.ast.type.Type,java.util.List,int)
+    103:104:public void setArrayCount(int)
+    107:108:public void setDimensions(java.util.List)
+    111:112:public void setInitializer(japa.parser.ast.expr.ArrayInitializerExpr)
+    115:116:public void setType(japa.parser.ast.type.Type)
+japa.parser.ast.expr.ArrayInitializerExpr:
+    39:41:public ArrayInitializerExpr(java.util.List)
+    63:64:public void setValues(java.util.List)
+japa.parser.ast.expr.AssignExpr:
+    56:60:public AssignExpr(japa.parser.ast.expr.Expression,japa.parser.ast.expr.Expression,japa.parser.ast.expr.AssignExpr$Operator)
+    92:93:public void setOperator(japa.parser.ast.expr.AssignExpr$Operator)
+    96:97:public void setTarget(japa.parser.ast.expr.Expression)
+    100:101:public void setValue(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.AssignExpr$Operator:
+    1:1:public static japa.parser.ast.expr.AssignExpr$Operator valueOf(java.lang.String)
+japa.parser.ast.expr.BinaryExpr:
+    63:67:public BinaryExpr(japa.parser.ast.expr.Expression,japa.parser.ast.expr.Expression,japa.parser.ast.expr.BinaryExpr$Operator)
+    99:100:public void setLeft(japa.parser.ast.expr.Expression)
+    103:104:public void setOperator(japa.parser.ast.expr.BinaryExpr$Operator)
+    107:108:public void setRight(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.BinaryExpr$Operator:
+    1:1:public static japa.parser.ast.expr.BinaryExpr$Operator valueOf(java.lang.String)
+japa.parser.ast.expr.BooleanLiteralExpr:
+    37:39:public BooleanLiteralExpr(boolean)
+    61:62:public void setValue(boolean)
+japa.parser.ast.expr.CastExpr:
+    40:43:public CastExpr(japa.parser.ast.type.Type,japa.parser.ast.expr.Expression)
+    70:71:public void setExpr(japa.parser.ast.expr.Expression)
+    74:75:public void setType(japa.parser.ast.type.Type)
+japa.parser.ast.expr.CharLiteralExpr:
+    36:37:public CharLiteralExpr(java.lang.String)
+japa.parser.ast.expr.ClassExpr:
+    38:40:public ClassExpr(japa.parser.ast.type.Type)
+    62:63:public void setType(japa.parser.ast.type.Type)
+japa.parser.ast.expr.ConditionalExpr:
+    41:45:public ConditionalExpr(japa.parser.ast.expr.Expression,japa.parser.ast.expr.Expression,japa.parser.ast.expr.Expression)
+    77:78:public void setCondition(japa.parser.ast.expr.Expression)
+    81:82:public void setElseExpr(japa.parser.ast.expr.Expression)
+    85:86:public void setThenExpr(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.DoubleLiteralExpr:
+    36:37:public DoubleLiteralExpr(java.lang.String)
+japa.parser.ast.expr.EnclosedExpr:
+    37:39:public EnclosedExpr(japa.parser.ast.expr.Expression)
+    61:62:public void setInner(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.FieldAccessExpr:
+    44:47:public FieldAccessExpr(japa.parser.ast.expr.Expression,java.lang.String)
+    79:80:public void setField(java.lang.String)
+    83:84:public void setScope(japa.parser.ast.expr.Expression)
+    87:88:public void setTypeArgs(java.util.List)
+japa.parser.ast.expr.InstanceOfExpr:
+    40:43:public InstanceOfExpr(japa.parser.ast.expr.Expression,japa.parser.ast.type.Type)
+    70:71:public void setExpr(japa.parser.ast.expr.Expression)
+    74:75:public void setType(japa.parser.ast.type.Type)
+japa.parser.ast.expr.IntegerLiteralExpr:
+    private static final java.lang.String UNSIGNED_MIN_VALUE
+    protected static final java.lang.String MIN_VALUE
+japa.parser.ast.expr.LongLiteralExpr:
+    private static final java.lang.String UNSIGNED_MIN_VALUE
+    protected static final java.lang.String MIN_VALUE
+japa.parser.ast.expr.MarkerAnnotationExpr:
+    35:37:public MarkerAnnotationExpr(japa.parser.ast.expr.NameExpr)
+japa.parser.ast.expr.MemberValuePair:
+    40:43:public MemberValuePair(java.lang.String,japa.parser.ast.expr.Expression)
+    70:71:public void setName(java.lang.String)
+    74:75:public void setValue(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.MethodCallExpr:
+    46:49:public MethodCallExpr(japa.parser.ast.expr.Expression,java.lang.String)
+    51:55:public MethodCallExpr(japa.parser.ast.expr.Expression,java.lang.String,java.util.List)
+    92:93:public void setArgs(java.util.List)
+    96:97:public void setName(java.lang.String)
+    100:101:public void setScope(japa.parser.ast.expr.Expression)
+    104:105:public void setTypeArgs(java.util.List)
+japa.parser.ast.expr.NameExpr:
+    37:39:public NameExpr(java.lang.String)
+    61:62:public final void setName(java.lang.String)
+japa.parser.ast.expr.NormalAnnotationExpr:
+    39:42:public NormalAnnotationExpr(japa.parser.ast.expr.NameExpr,java.util.List)
+    65:66:public void setPairs(java.util.List)
+japa.parser.ast.expr.ObjectCreationExpr:
+    50:54:public ObjectCreationExpr(japa.parser.ast.expr.Expression,japa.parser.ast.type.ClassOrInterfaceType,java.util.List)
+    96:97:public void setAnonymousClassBody(java.util.List)
+    100:101:public void setArgs(java.util.List)
+    104:105:public void setScope(japa.parser.ast.expr.Expression)
+    108:109:public void setType(japa.parser.ast.type.ClassOrInterfaceType)
+    112:113:public void setTypeArgs(java.util.List)
+japa.parser.ast.expr.QualifiedNameExpr:
+    38:40:public QualifiedNameExpr(japa.parser.ast.expr.NameExpr,java.lang.String)
+    62:63:public void setQualifier(japa.parser.ast.expr.NameExpr)
+japa.parser.ast.expr.SingleMemberAnnotationExpr:
+    37:40:public SingleMemberAnnotationExpr(japa.parser.ast.expr.NameExpr,japa.parser.ast.expr.Expression)
+    63:64:public void setMemberValue(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.StringLiteralExpr:
+    61:62:public final void setValue(java.lang.String)
+japa.parser.ast.expr.SuperExpr:
+    37:39:public SuperExpr(japa.parser.ast.expr.Expression)
+    61:62:public void setClassExpr(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.ThisExpr:
+    37:39:public ThisExpr(japa.parser.ast.expr.Expression)
+    61:62:public void setClassExpr(japa.parser.ast.expr.Expression)
+japa.parser.ast.expr.UnaryExpr:
+    50:53:public UnaryExpr(japa.parser.ast.expr.Expression,japa.parser.ast.expr.UnaryExpr$Operator)
+    80:81:public void setExpr(japa.parser.ast.expr.Expression)
+    84:85:public void setOperator(japa.parser.ast.expr.UnaryExpr$Operator)
+japa.parser.ast.expr.UnaryExpr$Operator:
+    1:1:public static japa.parser.ast.expr.UnaryExpr$Operator valueOf(java.lang.String)
+japa.parser.ast.expr.VariableDeclarationExpr:
+    48:51:public VariableDeclarationExpr(japa.parser.ast.type.Type,java.util.List)
+    53:57:public VariableDeclarationExpr(int,japa.parser.ast.type.Type,java.util.List)
+    100:101:public void setAnnotations(java.util.List)
+    104:105:public void setModifiers(int)
+    108:109:public void setType(japa.parser.ast.type.Type)
+    112:113:public void setVars(java.util.List)
+japa.parser.ast.stmt.AssertStmt:
+    40:42:public AssertStmt(japa.parser.ast.expr.Expression)
+    44:47:public AssertStmt(japa.parser.ast.expr.Expression,japa.parser.ast.expr.Expression)
+    74:75:public void setCheck(japa.parser.ast.expr.Expression)
+    78:79:public void setMessage(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.BlockStmt:
+    39:41:public BlockStmt(java.util.List)
+    63:64:public void setStmts(java.util.List)
+japa.parser.ast.stmt.BreakStmt:
+    37:39:public BreakStmt(java.lang.String)
+    61:62:public void setId(java.lang.String)
+japa.parser.ast.stmt.CatchClause:
+    41:44:public CatchClause(japa.parser.ast.body.Parameter,japa.parser.ast.stmt.BlockStmt)
+    71:72:public void setCatchBlock(japa.parser.ast.stmt.BlockStmt)
+    75:76:public void setExcept(japa.parser.ast.body.Parameter)
+japa.parser.ast.stmt.ContinueStmt:
+    37:39:public ContinueStmt(java.lang.String)
+    61:62:public void setId(java.lang.String)
+japa.parser.ast.stmt.DoStmt:
+    40:43:public DoStmt(japa.parser.ast.stmt.Statement,japa.parser.ast.expr.Expression)
+    70:71:public void setBody(japa.parser.ast.stmt.Statement)
+    74:75:public void setCondition(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.ExplicitConstructorInvocationStmt:
+    47:51:public ExplicitConstructorInvocationStmt(boolean,japa.parser.ast.expr.Expression,java.util.List)
+    88:89:public void setArgs(java.util.List)
+    92:93:public void setExpr(japa.parser.ast.expr.Expression)
+    96:97:public void setThis(boolean)
+    100:101:public void setTypeArgs(java.util.List)
+japa.parser.ast.stmt.ExpressionStmt:
+    38:40:public ExpressionStmt(japa.parser.ast.expr.Expression)
+    62:63:public void setExpression(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.ForStmt:
+    46:51:public ForStmt(java.util.List,japa.parser.ast.expr.Expression,java.util.List,japa.parser.ast.stmt.Statement)
+    88:89:public void setBody(japa.parser.ast.stmt.Statement)
+    92:93:public void setCompare(japa.parser.ast.expr.Expression)
+    96:97:public void setInit(java.util.List)
+    100:101:public void setUpdate(java.util.List)
+japa.parser.ast.stmt.ForeachStmt:
+    43:47:public ForeachStmt(japa.parser.ast.expr.VariableDeclarationExpr,japa.parser.ast.expr.Expression,japa.parser.ast.stmt.Statement)
+    79:80:public void setBody(japa.parser.ast.stmt.Statement)
+    83:84:public void setIterable(japa.parser.ast.expr.Expression)
+    87:88:public void setVariable(japa.parser.ast.expr.VariableDeclarationExpr)
+japa.parser.ast.stmt.IfStmt:
+    42:46:public IfStmt(japa.parser.ast.expr.Expression,japa.parser.ast.stmt.Statement,japa.parser.ast.stmt.Statement)
+    78:79:public void setCondition(japa.parser.ast.expr.Expression)
+    82:83:public void setElseStmt(japa.parser.ast.stmt.Statement)
+    86:87:public void setThenStmt(japa.parser.ast.stmt.Statement)
+japa.parser.ast.stmt.LabeledStmt:
+    39:42:public LabeledStmt(java.lang.String,japa.parser.ast.stmt.Statement)
+    69:70:public void setLabel(java.lang.String)
+    73:74:public void setStmt(japa.parser.ast.stmt.Statement)
+japa.parser.ast.stmt.ReturnStmt:
+    38:40:public ReturnStmt(japa.parser.ast.expr.Expression)
+    62:63:public void setExpr(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.SwitchEntryStmt:
+    42:45:public SwitchEntryStmt(japa.parser.ast.expr.Expression,java.util.List)
+    72:73:public void setLabel(japa.parser.ast.expr.Expression)
+    76:77:public void setStmts(java.util.List)
+japa.parser.ast.stmt.SwitchStmt:
+    42:45:public SwitchStmt(japa.parser.ast.expr.Expression,java.util.List)
+    72:73:public void setEntries(java.util.List)
+    76:77:public void setSelector(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.SynchronizedStmt:
+    40:43:public SynchronizedStmt(japa.parser.ast.expr.Expression,japa.parser.ast.stmt.BlockStmt)
+    70:71:public void setBlock(japa.parser.ast.stmt.BlockStmt)
+    74:75:public void setExpr(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.ThrowStmt:
+    38:40:public ThrowStmt(japa.parser.ast.expr.Expression)
+    62:63:public void setExpr(japa.parser.ast.expr.Expression)
+japa.parser.ast.stmt.TryStmt:
+    43:47:public TryStmt(japa.parser.ast.stmt.BlockStmt,java.util.List,japa.parser.ast.stmt.BlockStmt)
+    79:80:public void setCatchs(java.util.List)
+    83:84:public void setFinallyBlock(japa.parser.ast.stmt.BlockStmt)
+    87:88:public void setTryBlock(japa.parser.ast.stmt.BlockStmt)
+japa.parser.ast.stmt.TypeDeclarationStmt:
+    38:40:public TypeDeclarationStmt(japa.parser.ast.body.TypeDeclaration)
+    62:63:public void setTypeDeclaration(japa.parser.ast.body.TypeDeclaration)
+japa.parser.ast.stmt.WhileStmt:
+    40:43:public WhileStmt(japa.parser.ast.expr.Expression,japa.parser.ast.stmt.Statement)
+    70:71:public void setBody(japa.parser.ast.stmt.Statement)
+    74:75:public void setCondition(japa.parser.ast.expr.Expression)
+japa.parser.ast.type.ClassOrInterfaceType:
+    43:45:public ClassOrInterfaceType(java.lang.String)
+    47:50:public ClassOrInterfaceType(japa.parser.ast.type.ClassOrInterfaceType,java.lang.String)
+    82:83:public void setName(java.lang.String)
+    86:87:public void setScope(japa.parser.ast.type.ClassOrInterfaceType)
+    90:91:public void setTypeArgs(java.util.List)
+japa.parser.ast.type.PrimitiveType:
+    41:43:public PrimitiveType(japa.parser.ast.type.PrimitiveType$Primitive)
+    65:66:public void setType(japa.parser.ast.type.PrimitiveType$Primitive)
+japa.parser.ast.type.PrimitiveType$Primitive:
+    1:1:public static japa.parser.ast.type.PrimitiveType$Primitive valueOf(java.lang.String)
+japa.parser.ast.type.ReferenceType:
+    39:41:public ReferenceType(japa.parser.ast.type.Type)
+    43:46:public ReferenceType(japa.parser.ast.type.Type,int)
+    73:74:public void setArrayCount(int)
+    77:78:public void setType(japa.parser.ast.type.Type)
+japa.parser.ast.type.WildcardType:
+    39:41:public WildcardType(japa.parser.ast.type.ReferenceType)
+    43:46:public WildcardType(japa.parser.ast.type.ReferenceType,japa.parser.ast.type.ReferenceType)
+    73:74:public void setExtends(japa.parser.ast.type.ReferenceType)
+    77:78:public void setSuper(japa.parser.ast.type.ReferenceType)
+japa.parser.ast.visitor.GenericVisitorAdapter
+japa.parser.ast.visitor.ModifierVisitorAdapter
+japa.parser.ast.visitor.VoidVisitorAdapter
+m.framework.network.ByteArrayPart
+m.framework.network.FilePart
+m.framework.network.HTTPPart
+m.framework.network.KVPair
+m.framework.network.MultiPart
+m.framework.network.MultiPartInputStream
+m.framework.network.NetworkHelper:
+    public static int connectionTimeout
+    public static int readTimout
+    40:78:public java.lang.String httpGet(java.lang.String,java.util.ArrayList,java.util.ArrayList)
+    84:124:public void httpGet(java.lang.String,java.util.ArrayList,java.util.ArrayList,m.framework.network.ResponseCallback)
+    127:156:public void download(java.lang.String,java.io.File)
+    187:224:public java.lang.String httpPost(java.lang.String,java.util.ArrayList,m.framework.network.KVPair,java.util.ArrayList)
+    231:268:public void httpPost(java.lang.String,java.util.ArrayList,m.framework.network.KVPair,java.util.ArrayList,m.framework.network.ResponseCallback)
+    272:318:private org.apache.http.client.methods.HttpPost filePost(java.lang.String,java.util.ArrayList,m.framework.network.KVPair)
+    323:332:private org.apache.http.client.methods.HttpPost textPost(java.lang.String,java.util.ArrayList)
+    337:367:public void rawPost(java.lang.String,java.util.ArrayList,m.framework.network.HTTPPart,m.framework.network.ResponseCallback)
+    372:416:public java.lang.String httpPut(java.lang.String,java.util.ArrayList,m.framework.network.KVPair,java.util.ArrayList)
+    422:433:private java.lang.String kvPairsToUrl(java.util.ArrayList)
+m.framework.network.StringPart
+m.framework.ui.widget.asyncview.AsyncImageView:
+    public static final int DEFAULT_TRANSPARENT
+    private static final int MSG_IMG_GOT
+    33:35:public AsyncImageView(android.content.Context,android.util.AttributeSet)
+    38:40:public AsyncImageView(android.content.Context,android.util.AttributeSet,int)
+m.framework.ui.widget.asyncview.AsyncView:
+    public abstract void execute(java.lang.String,int)
+m.framework.ui.widget.asyncview.BitmapProcessor:
+    private static final int CAPACITY
+    private static final int MAX_REQ_TIME
+    private static final int MAX_SIZE
+    private static final int OVERFLOW_SIZE
+    52:62:public static void stop()
+m.framework.ui.widget.pulltorefresh.GroupListView
+m.framework.ui.widget.pulltorefresh.GroupListView$1
+m.framework.ui.widget.pulltorefresh.GroupListView$GroupListAdapter
+m.framework.ui.widget.pulltorefresh.GroupListView$ItemHolder
+m.framework.ui.widget.pulltorefresh.PullToRefreshGridAdapter
+m.framework.ui.widget.pulltorefresh.PullToRefreshGridAdapter$1
+m.framework.ui.widget.pulltorefresh.PullToRefreshGroupListAdapter
+m.framework.ui.widget.pulltorefresh.PullToRefreshGroupListAdapter$1
+m.framework.ui.widget.pulltorefresh.PullToRefreshGroupListAdapter$2
+m.framework.ui.widget.pulltorefresh.PullToRefreshView:
+    private static final long MIN_REF_TIME
+    35:37:public PullToRefreshView(android.content.Context,android.util.AttributeSet)
+    40:42:public PullToRefreshView(android.content.Context,android.util.AttributeSet,int)
+    182:183:public void lockPulling()
+    187:188:public void releaseLock()
+m.framework.ui.widget.pulltorefresh.ScrollableGridView
+m.framework.ui.widget.pulltorefresh.ScrollableGridView$1
+m.framework.ui.widget.pulltorefresh.ScrollableGroupListView
+m.framework.ui.widget.pulltorefresh.ScrollableGroupListView$1
+m.framework.ui.widget.pulltorefresh.ScrollableListView:
+    18:20:public ScrollableListView(android.content.Context,android.util.AttributeSet)
+    23:25:public ScrollableListView(android.content.Context,android.util.AttributeSet,int)
+m.framework.ui.widget.slidingmenu.BodyContainer
+m.framework.ui.widget.slidingmenu.MenuAdapter
+m.framework.ui.widget.slidingmenu.MenuConfig
+m.framework.ui.widget.slidingmenu.SlidingMenu
+m.framework.ui.widget.slidingmenu.SlidingMenu$1
+m.framework.ui.widget.slidingmenu.SlidingMenu$1$1
+m.framework.ui.widget.slidingmenu.SlidingMenu$2
+m.framework.ui.widget.slidingmenu.SlidingMenu$3
+m.framework.ui.widget.slidingmenu.SlidingMenu$3$1
+m.framework.ui.widget.slidingmenu.SlidingMenu$4
+m.framework.ui.widget.slidingmenu.SlidingMenu$5
+m.framework.ui.widget.slidingmenu.SlidingMenu$6
+m.framework.ui.widget.slidingmenu.SlidingMenu$6$1
+m.framework.ui.widget.slidingmenu.SlidingMenuGroup
+m.framework.ui.widget.slidingmenu.SlidingMenuItem
+m.framework.ui.widget.viewpager.ViewPagerClassic:
+    private static final int SNAP_VELOCITY
+    private static final int TOUCH_STATE_REST
+    private static final int TOUCH_STATE_SCROLLING
+    454:461:public void scrollLeft()
+    465:473:public void scrollRight()
+m.framework.utils.Data:
+    private static final java.lang.String CHAT_SET
+    10:10:public Data()
+    15:18:public static byte[] SHA1(java.lang.String)
+    29:42:public static byte[] AES128Encode(java.lang.String,java.lang.String)
+    54:63:public static byte[] AES128Encode(byte[],java.lang.String)
+    68:70:public static java.lang.String AES128Decode(java.lang.String,byte[])
+    74:85:public static byte[] AES128Decode(byte[],byte[])
+    89:93:public static java.lang.String byteToHex(byte[])
+    97:97:public static java.util.HashMap parseJson(java.lang.String)
+    101:101:public static java.lang.String parseJson(java.util.HashMap)
+    105:111:public static java.lang.String base62(long)
+    145:146:public static java.lang.String urlEncode(java.lang.String,java.lang.String)
+m.framework.utils.DeviceHelper:
+    private static m.framework.utils.DeviceHelper deviceHelper
+    43:46:public static m.framework.utils.DeviceHelper getInstance(android.content.Context)
+    64:64:public boolean isRooted()
+    68:78:public java.lang.String getMacAddress()
+    83:83:public java.lang.String getModel()
+    88:88:public java.lang.String getFactory()
+    93:117:public java.lang.String getDeviceId()
+    122:124:public java.lang.String getDeviceData()
+    135:145:public java.lang.String Base64AES(java.lang.String,java.lang.String)
+    150:150:public java.lang.String getOSVersion()
+    155:161:public java.lang.String getScreenSize()
+    176:181:public java.lang.String getCarrier()
+    186:213:public java.lang.String getNetworkType()
+    218:218:public int getPlatformCode()
+    222:262:private boolean isFastMobileNetwork()
+    266:283:public org.json.JSONArray getRunningApp()
+    287:295:public java.lang.String getRunningAppStr()
+    300:309:public java.lang.String getDeviceKey()
+    319:329:public java.lang.String getAppName()
+    335:341:public int getAppVersion()
+    347:353:public java.lang.String getAppVersionName()
+    358:377:public java.util.ArrayList getInstalledApp(boolean)
+    381:383:private boolean isSystemApp(android.content.pm.PackageInfo)
+    387:389:public java.lang.String getNetworkOperator()
+    394:401:public java.lang.String getTopTaskPackageName()
+m.framework.utils.HEX:
+    3:3:public HEX()
+    15:30:public static byte[] toByte(java.lang.String)
+    34:35:public static java.lang.String encodeHexString(byte[])
+    39:39:public static byte[] decodeHexString(java.lang.String)
+    43:60:public static byte[] decodeHex(char[])
+    64:68:protected static int toDigit(char,int)
+    72:82:public static char[] encodeHex(byte[])
+    86:86:public byte[] decode(byte[])
+    91:95:public byte[] decode(java.lang.Object)
+    100:100:public byte[] encode(byte[])
+    105:109:public char[] encode(java.lang.Object)
+m.framework.utils.Hashon:
+    21:30:public java.util.HashMap fromJson(java.lang.String)
+    35:54:private java.util.HashMap fromJson(org.json.JSONObject)
+    59:70:private java.util.ArrayList fromJson(org.json.JSONArray)
+    76:80:public java.lang.String fromHashMap(java.util.HashMap)
+    86:100:private org.json.JSONObject getJSONObject(java.util.HashMap)
+    104:108:private boolean isBasicArray(java.lang.Object)
+    112:175:private java.util.ArrayList arrayToList(java.lang.Object)
+    181:191:private org.json.JSONArray getJSONArray(java.util.ArrayList)
+    197:201:public java.lang.String format(java.lang.String)
+    206:231:private java.lang.String format(java.lang.String,java.util.HashMap)
+    236:260:private java.lang.String format(java.lang.String,java.util.ArrayList)
+m.framework.utils.UIHandler:
+    13:13:public UIHandler()
+    43:45:private static android.os.Message getShellMessage(int,android.os.Handler$Callback)
+    49:49:public static boolean sendMessage(android.os.Message,android.os.Handler$Callback)
+    57:57:public static boolean sendMessageAtTime(android.os.Message,long,android.os.Handler$Callback)
+    61:61:public static boolean sendMessageAtFrontOfQueue(android.os.Message,android.os.Handler$Callback)
+    65:65:public static boolean sendEmptyMessage(int,android.os.Handler$Callback)
+    69:69:public static boolean sendEmptyMessageAtTime(int,long,android.os.Handler$Callback)
+    73:73:public static boolean sendEmptyMessageDelayed(int,long,android.os.Handler$Callback)
+m.framework.utils.Utils:
+    private static float density
+    18:18:public Utils()
+    23:26:public static int dipToPx(android.content.Context,int)
+    128:128:public static int getScreenHeight(android.content.Context)

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets" >
+            <file
+                name="data/btn.wav"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\data\btn.wav" />
+            <file
+                name="data/musicbg.mp3"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\data\musicbg.mp3" />
+            <file
+                name="data/particle-star.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\data\particle-star.png" />
+            <file
+                name="data/star.mp3"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\data\star.mp3" />
+            <file
+                name="data/test.p"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\data\test.p" />
+            <file
+                name="game.fnt"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\game.fnt" />
+            <file
+                name="game.hiero"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\game.hiero" />
+            <file
+                name="game.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\game.png" />
+            <file
+                name="p.atlas"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p.atlas" />
+            <file
+                name="p.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p.png" />
+            <file
+                name="p2.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p2.png" />
+            <file
+                name="p3.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p3.png" />
+            <file
+                name="p4.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p4.png" />
+            <file
+                name="p5.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p5.png" />
+            <file
+                name="p6.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\p6.png" />
+            <file
+                name="puzzle"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\puzzle" />
+            <file
+                name="puzzle.fnt"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\puzzle.fnt" />
+            <file
+                name="puzzle.hiero"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\puzzle.hiero" />
+            <file
+                name="puzzle.png"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\puzzle.png" />
+            <file
+                name="readme.txt"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\readme.txt" />
+            <file
+                name="ShareSDK.xml"
+                path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\assets\ShareSDK.xml" />
+        </source>
+    </dataSet>
+    <dataSet config="release" >
+        <source path="F:\ADWisdomHouse\Game\Puzzle\FlagPuzzle\android\src\release\assets" />
+    </dataSet>
+
+</merger>
