@@ -2447,22 +2447,23 @@ com.ads.puzzle.flag.Assets -> com.ads.puzzle.flag.b:
     com.badlogic.gdx.graphics.g2d.TextureRegion gate_3star -> O
     com.badlogic.gdx.graphics.g2d.TextureRegion gate_lock -> P
     com.badlogic.gdx.graphics.g2d.TextureRegion lock -> Q
-    com.badlogic.gdx.graphics.g2d.TextureRegion[] cubes -> ag
+    com.badlogic.gdx.graphics.g2d.TextureRegion[] cubes -> ah
     java.util.List levels -> R
     java.util.Map levelSpriteMap -> S
     float SPRITESIZE -> T
     com.badlogic.gdx.graphics.g2d.Sprite[] pieces -> U
-    float TOP_BTN_SIZE -> V
-    float TOPBAR_HEIGHT -> W
-    float WIDTH -> X
-    float HEIGHT -> Y
-    float PIECE_SIZE -> Z
-    float SMALL_PIECE_SIZE -> aa
-    float LEVEL_IMAGE_SIZE -> ab
-    float LEVEL_IMAGE_OFF_SIZE -> ac
-    int LEVEL_MAX -> ad
-    float space -> ae
-    java.util.List seriesList -> af
+    float TOPBAR_HEIGHT -> V
+    float WIDTH -> W
+    float HEIGHT -> X
+    float SPACE -> Y
+    float H_SPACE -> Z
+    float PIECE_SIZE -> aa
+    float SPRITE_SIZE -> ab
+    float SMALL_PIECE_SIZE -> ac
+    float LEVEL_IMAGE_SIZE -> ad
+    float LEVEL_IMAGE_OFF_SIZE -> ae
+    int LEVEL_MAX -> af
+    java.util.List seriesList -> ag
     void load() -> a
     void creteMagicCubes(com.badlogic.gdx.graphics.g2d.TextureAtlas) -> a
     void createLevelSprite(com.badlogic.gdx.graphics.g2d.TextureAtlas) -> b
@@ -2501,11 +2502,10 @@ com.ads.puzzle.flag.actors.Area -> com.ads.puzzle.flag.a.a:
     float y2 -> m
     float y1 -> n
     float y0 -> o
-    float x_off -> p
-    float spriteSize -> q
-    float x_bg -> r
-    float y_bg -> s
-    java.util.List sprites -> t
+    float spriteSize -> p
+    float x_bg -> q
+    float y_bg -> r
+    java.util.List sprites -> s
     int getId() -> a
     int getPieceId() -> b
     void setPieceId(int) -> a
@@ -2519,7 +2519,6 @@ com.ads.puzzle.flag.actors.Piece -> com.ads.puzzle.flag.a.d:
     int area -> a
     int orientation -> b
     int id -> c
-    float space -> d
     void return2BeginArea() -> a
     void changeOrientation() -> b
     int getArea() -> c
@@ -2528,13 +2527,11 @@ com.ads.puzzle.flag.actors.Piece -> com.ads.puzzle.flag.a.d:
     void setOrientation(int) -> b
     int getId() -> e
 com.ads.puzzle.flag.android.AndroidLauncher -> com.ads.puzzle.flag.android.AndroidLauncher:
-    java.lang.String adPngStr -> a
-    java.io.File adPng -> b
-    java.lang.String adAtlasStr -> c
-    java.io.File adAtlas -> d
-    java.lang.String urlStr -> e
-    java.io.File url -> f
-    boolean initFail -> g
+    java.lang.String adAtlasStr -> a
+    java.io.File adAtlas -> b
+    java.lang.String urlStr -> c
+    java.io.File url -> d
+    boolean initFail -> e
     void onCreate(android.os.Bundle) -> onCreate
     void onBackPressed() -> onBackPressed
     boolean isNetwork() -> a
@@ -2571,12 +2568,13 @@ com.ads.puzzle.flag.android.PEventImpl -> com.ads.puzzle.flag.android.e:
     void install(java.lang.String) -> a
     boolean isNetworkEnable() -> f
     boolean note_Intent(android.content.Context) -> a
-    void initImagePath() -> i
+    void showShare() -> i
     java.io.File downLoadFile(java.lang.String) -> b
     java.lang.String access$000(com.ads.puzzle.flag.android.PEventImpl) -> a
     com.ads.puzzle.flag.android.AndroidLauncher access$100(com.ads.puzzle.flag.android.PEventImpl) -> b
-    java.lang.String access$200(com.ads.puzzle.flag.android.PEventImpl) -> c
-    void access$300(com.ads.puzzle.flag.android.PEventImpl) -> d
+    void access$200(com.ads.puzzle.flag.android.PEventImpl) -> c
+    java.lang.String access$300(com.ads.puzzle.flag.android.PEventImpl) -> d
+    void access$400(com.ads.puzzle.flag.android.PEventImpl) -> e
 com.ads.puzzle.flag.android.PEventImpl$1 -> com.ads.puzzle.flag.android.f:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
     void run() -> run
@@ -2609,6 +2607,7 @@ com.ads.puzzle.flag.android.PEventImpl$4$1 -> com.ads.puzzle.flag.android.p:
     com.ads.puzzle.flag.android.PEventImpl$4 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.ads.puzzle.flag.android.PEventImpl$4$2 -> com.ads.puzzle.flag.android.q:
+    com.ads.puzzle.flag.android.PEventImpl$4 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.ads.puzzle.flag.android.PEventImpl$4$3 -> com.ads.puzzle.flag.android.r:
     void onClick(android.content.DialogInterface,int) -> onClick

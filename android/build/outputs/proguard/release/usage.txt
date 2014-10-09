@@ -473,14 +473,13 @@ com.ads.puzzle.flag.Answer:
     public static final int GRADE_1
     public static final int GRADE_2
     public static final int GRADE_3
-    public static final int GRADE_4
     9:9:public Answer()
 com.ads.puzzle.flag.Assets:
     33:33:public Assets()
 com.ads.puzzle.flag.Settings:
     19:19:public Settings()
 com.ads.puzzle.flag.actors.Area:
-    88:89:public void setId(int)
+    84:85:public void setId(int)
 com.ads.puzzle.flag.actors.Gate:
     27:27:public int getId()
 com.ads.puzzle.flag.android.AndroidLauncher:

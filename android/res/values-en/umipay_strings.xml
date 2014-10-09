@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="umipay_base_loading">"The network busy，Please waiting"</string>
+    <string name="umipay_agm">"I agree to the protocl"</string>
+</resources>
+
