@@ -5,6 +5,7 @@ import com.ads.puzzle.flag.Assets;
 import com.ads.puzzle.flag.Puzzle;
 import com.ads.puzzle.flag.Settings;
 import com.ads.puzzle.flag.screen.GateScreen;
+import com.ads.puzzle.flag.screen.LevelScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Rectangle;
@@ -17,6 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
  * Created by Administrator on 2014/8/2.
  */
 public class LevelListener extends GestureDetector.GestureAdapter {
+    private GateScreen gateScreen;
     private Stage stage;
     private Puzzle puzzle;
     private Vector3 touchPoint;
@@ -25,10 +27,11 @@ public class LevelListener extends GestureDetector.GestureAdapter {
     private float prex;
     private float currentx;
 
-    public LevelListener(Stage s, Puzzle game) {
-        stage = s;
-        puzzle = game;
+    public LevelListener(LevelScreen ls) {
+        stage = ls.getStage();
+        puzzle = ls.getPuzzle();
         touchPoint = new Vector3();
+        gateScreen = new GateScreen(ls);
     }
 
     public float getPosition() {
@@ -48,14 +51,15 @@ public class LevelListener extends GestureDetector.GestureAdapter {
     @Override
     public boolean tap(float x, float y, int count, int button) {
         stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0)); // 坐标转化
-        int level = (int) Math.abs(position / 480);
+        int level = (int) Math.abs(position / Assets.WIDTH);
         int tLevel = Settings.unlockGateNum / Answer.GATE_MAX;
         if (level <= tLevel && level != Assets.LEVEL_MAX) {
             float v = Assets.WIDTH - 2 * Assets.LEVEL_IMAGE_OFF_SIZE;
             Rectangle bounds = new Rectangle(Assets.LEVEL_IMAGE_OFF_SIZE, (Assets.HEIGHT - Assets.WIDTH) / 2 + Assets.LEVEL_IMAGE_OFF_SIZE, v, v);
             if (bounds.contains(touchPoint.x, touchPoint.y)) {
                 Assets.playSound(Assets.btnSound);
-                puzzle.setScreen(new GateScreen(puzzle, level));
+                gateScreen.buildGateImage(level);
+                puzzle.setScreen(gateScreen);
             }
         }
         return false;

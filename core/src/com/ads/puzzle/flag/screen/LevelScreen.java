@@ -7,6 +7,7 @@ import com.ads.puzzle.flag.Settings;
 import com.ads.puzzle.flag.listener.LevelDetector;
 import com.ads.puzzle.flag.listener.LevelListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -22,49 +23,49 @@ import java.util.concurrent.TimeUnit;
 public class LevelScreen extends OtherScreen {
     private ImageButton leftBtn;
     private ImageButton rightBtn;
+    private LevelListener levelListener;
+    private InputMultiplexer multiplexer;
     private float lockX;
     private float lockY;
     private float lockSize;
     private float levelSize;
-    private int level;
-    private LevelListener levelListener;
     private float targetposition;
-    private float initPosition = Integer.MAX_VALUE;
+    private float initPosition;
+    private int level;
     private boolean isAddLock;
 
     public LevelScreen(Puzzle puzzle) {
         super(puzzle);
-    }
-
-    public LevelScreen(Puzzle puzzle, int lv) {
-        super(puzzle);
-        level = lv;
-        initPosition = -Assets.WIDTH * level;
+        initPosition = Integer.MAX_VALUE;
     }
 
     @Override
     public void show() {
-        super.show();
-        lockSize = Assets.WIDTH / 3;
-        lockX = (Assets.WIDTH - lockSize) / 2;
-        lockY = (Assets.HEIGHT - lockSize) / 2;
+        if (!isShow()) {
+            super.show();
+            lockSize = Assets.WIDTH / 3;
+            lockX = (Assets.WIDTH - lockSize) / 2;
+            lockY = (Assets.HEIGHT - lockSize) / 2;
 
-        levelSize = Assets.WIDTH;
-        float btnSize = Assets.WIDTH / 5;
-        leftBtn = new ImageButton(new TextureRegionDrawable(Assets.levelPreBtn));
-        leftBtn.setBounds(0, (Assets.HEIGHT - btnSize) / 2, btnSize, btnSize);
-        rightBtn = new ImageButton(new TextureRegionDrawable(Assets.levelNextBtn));
-        rightBtn.setBounds(Assets.WIDTH - btnSize, (Assets.HEIGHT - btnSize) / 2, btnSize, btnSize);
-        btnVisiableHandle();
-        setListens();
-        InputMultiplexer multiplexer = new InputMultiplexer();
-        multiplexer.addProcessor(getStage());
-        levelListener = new LevelListener(getStage(), getPuzzle());
-        if (initPosition != Integer.MAX_VALUE) {
-            levelListener.setPosition(initPosition);
+            levelSize = Assets.WIDTH;
+            float btnSize = Assets.WIDTH / 5;
+            leftBtn = new ImageButton(new TextureRegionDrawable(Assets.levelPreBtn));
+            leftBtn.setBounds(0, (Assets.HEIGHT - btnSize) / 2, btnSize, btnSize);
+            rightBtn = new ImageButton(new TextureRegionDrawable(Assets.levelNextBtn));
+            rightBtn.setBounds(Assets.WIDTH - btnSize, (Assets.HEIGHT - btnSize) / 2, btnSize, btnSize);
+            btnVisiableHandle();
+            setListens();
+            multiplexer = new InputMultiplexer();
+            multiplexer.addProcessor(getStage());
+            levelListener = new LevelListener(this);
+            if (initPosition != Integer.MAX_VALUE) {
+                levelListener.setPosition(initPosition);
+            }
+            multiplexer.addProcessor(new LevelDetector(getStage(), levelListener));
+            setShow(true);
         }
-        multiplexer.addProcessor(new LevelDetector(getStage(), levelListener));
         Gdx.input.setInputProcessor(multiplexer);
+        setStarNum();
     }
 
     private void lock() {
@@ -121,6 +122,16 @@ public class LevelScreen extends OtherScreen {
 
     @Override
     public void render(float delta) {
+        if (Gdx.input.isKeyPressed(Input.Keys.BACK)) {
+            if (!isBackFlag()) {
+                MainScreen mainScreen = getPuzzle().getMainScreen();
+                mainScreen.setBackFlag(true);
+                getPuzzle().setScreen(mainScreen);
+                return;
+            }
+        } else {
+            setBackFlag(false);
+        }
         super.render(delta);
         getBatch().begin();
         float position = levelListener.getPosition();
@@ -181,5 +192,17 @@ public class LevelScreen extends OtherScreen {
                 }
             }
         }, 0, 200, TimeUnit.MILLISECONDS);
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int lv) {
+        level = lv;
+        initPosition = -Assets.WIDTH * lv;
+        if (levelListener != null) {
+            levelListener.setPosition(initPosition);
+        }
     }
 }

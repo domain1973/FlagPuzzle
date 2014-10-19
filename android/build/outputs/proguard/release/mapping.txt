@@ -411,8 +411,9 @@ android.support.v4.content.Loader -> a.a.a.b.a:
 android.support.v4.content.Loader$OnLoadCompleteListener -> a.a.a.b.b:
 android.support.v4.util.DebugUtils -> a.a.a.c.a:
     com.badlogic.gdx.scenes.scene2d.ui.Image image -> f
-    com.badlogic.gdx.scenes.scene2d.ui.Image readmeImage -> g
-    java.lang.String url -> h
+    java.lang.String name -> g
+    java.lang.String detail -> h
+    java.lang.String url -> i
     boolean musicEnabled -> a
     boolean soundEnabled -> b
     int unlockGateNum -> c
@@ -421,15 +422,17 @@ android.support.v4.util.DebugUtils -> a.a.a.c.a:
     void buildShortClassTag(java.lang.Object,java.lang.StringBuilder) -> a
     com.badlogic.gdx.scenes.scene2d.ui.Image getImage() -> a
     android.support.v4.util.DebugUtils setImage$7cc30388(com.badlogic.gdx.scenes.scene2d.ui.Image) -> a
-    com.badlogic.gdx.scenes.scene2d.ui.Image getReadmeImage() -> b
-    android.support.v4.util.DebugUtils setReadmeImage$7cc30388(com.badlogic.gdx.scenes.scene2d.ui.Image) -> b
-    java.lang.String getUrl() -> c
-    android.support.v4.util.DebugUtils setUrl$19909190(java.lang.String) -> a
+    java.lang.String getName() -> b
+    android.support.v4.util.DebugUtils setName$19909190(java.lang.String) -> a
+    java.lang.String getDetail() -> c
+    android.support.v4.util.DebugUtils setDetail$19909190(java.lang.String) -> b
+    java.lang.String getUrl() -> d
+    android.support.v4.util.DebugUtils setUrl$19909190(java.lang.String) -> c
     boolean hasModifier(int,int) -> a
-    android.graphics.Bitmap getBitmap(java.lang.String) -> b
+    android.graphics.Bitmap getBitmap(java.lang.String) -> d
     android.graphics.Bitmap getBitmap(java.io.InputStream) -> a
     android.graphics.Bitmap getBitmap(java.io.InputStream,int) -> a
-    java.lang.String getFileMime(java.lang.String) -> c
+    java.lang.String getFileMime(java.lang.String) -> e
     int getScreenWidth(android.content.Context) -> a
 android.support.v4.util.LogWriter -> a.a.a.c.b:
     java.lang.String mTag -> a
@@ -2404,18 +2407,18 @@ com.ads.puzzle.flag.Answer -> com.ads.puzzle.flag.a:
     java.util.List gateStars -> d
     boolean isLasterSmallGate(int) -> a
 com.ads.puzzle.flag.Assets -> com.ads.puzzle.flag.b:
-    com.badlogic.gdx.audio.Music musicbg -> a
-    com.badlogic.gdx.audio.Sound btnSound -> b
-    com.badlogic.gdx.audio.Sound starSound -> c
-    com.badlogic.gdx.graphics.g2d.TextureRegion gameBg -> d
-    com.badlogic.gdx.graphics.g2d.TextureRegion theme -> e
-    com.badlogic.gdx.graphics.g2d.TextureRegion layerBg -> f
-    com.badlogic.gdx.graphics.g2d.TextureRegion areaBg -> g
-    com.badlogic.gdx.graphics.g2d.TextureRegion resultBg -> h
-    com.badlogic.gdx.graphics.g2d.TextureRegion star -> i
-    com.badlogic.gdx.graphics.g2d.TextureRegion star_null -> j
-    com.badlogic.gdx.graphics.g2d.TextureRegion readme -> k
-    com.badlogic.gdx.graphics.g2d.TextureRegion aboutInfo -> l
+    com.badlogic.gdx.assets.AssetManager assetManager -> a
+    com.badlogic.gdx.audio.Music musicbg -> b
+    com.badlogic.gdx.audio.Sound btnSound -> c
+    com.badlogic.gdx.audio.Sound starSound -> d
+    com.badlogic.gdx.graphics.g2d.TextureRegion gameBg -> e
+    com.badlogic.gdx.graphics.g2d.TextureRegion theme -> f
+    com.badlogic.gdx.graphics.g2d.TextureRegion layerBg -> g
+    com.badlogic.gdx.graphics.g2d.TextureRegion areaBg -> h
+    com.badlogic.gdx.graphics.g2d.TextureRegion resultBg -> i
+    com.badlogic.gdx.graphics.g2d.TextureRegion star -> j
+    com.badlogic.gdx.graphics.g2d.TextureRegion star_null -> k
+    com.badlogic.gdx.graphics.g2d.TextureRegion readme -> l
     com.badlogic.gdx.graphics.g2d.TextureRegion help -> m
     com.badlogic.gdx.graphics.g2d.TextureRegion share -> n
     com.badlogic.gdx.graphics.g2d.TextureRegion recommend -> o
@@ -2438,48 +2441,46 @@ com.ads.puzzle.flag.Assets -> com.ads.puzzle.flag.b:
     com.badlogic.gdx.graphics.g2d.TextureRegion resetGameBtn -> F
     com.badlogic.gdx.graphics.g2d.TextureRegion levelPreBtn -> G
     com.badlogic.gdx.graphics.g2d.TextureRegion levelNextBtn -> H
-    com.badlogic.gdx.graphics.g2d.TextureRegion downloadBtn -> I
-    com.badlogic.gdx.graphics.g2d.TextureRegion downloadBtnDown -> J
-    com.badlogic.gdx.graphics.g2d.TextureRegion closeBtn -> K
-    com.badlogic.gdx.graphics.g2d.TextureRegion gate_0star -> L
-    com.badlogic.gdx.graphics.g2d.TextureRegion gate_1star -> M
-    com.badlogic.gdx.graphics.g2d.TextureRegion gate_2star -> N
-    com.badlogic.gdx.graphics.g2d.TextureRegion gate_3star -> O
-    com.badlogic.gdx.graphics.g2d.TextureRegion gate_lock -> P
-    com.badlogic.gdx.graphics.g2d.TextureRegion lock -> Q
-    com.badlogic.gdx.graphics.g2d.TextureRegion[] cubes -> ah
-    java.util.List levels -> R
-    java.util.Map levelSpriteMap -> S
-    float SPRITESIZE -> T
-    com.badlogic.gdx.graphics.g2d.Sprite[] pieces -> U
-    float TOPBAR_HEIGHT -> V
-    float WIDTH -> W
-    float HEIGHT -> X
-    float SPACE -> Y
-    float H_SPACE -> Z
-    float PIECE_SIZE -> aa
-    float SPRITE_SIZE -> ab
-    float SMALL_PIECE_SIZE -> ac
-    float LEVEL_IMAGE_SIZE -> ad
-    float LEVEL_IMAGE_OFF_SIZE -> ae
-    int LEVEL_MAX -> af
-    java.util.List seriesList -> ag
+    com.badlogic.gdx.graphics.g2d.TextureRegion gate_0star -> I
+    com.badlogic.gdx.graphics.g2d.TextureRegion gate_1star -> J
+    com.badlogic.gdx.graphics.g2d.TextureRegion gate_2star -> K
+    com.badlogic.gdx.graphics.g2d.TextureRegion gate_3star -> L
+    com.badlogic.gdx.graphics.g2d.TextureRegion gate_lock -> M
+    com.badlogic.gdx.graphics.g2d.TextureRegion lock -> N
+    com.badlogic.gdx.graphics.g2d.TextureRegion[] cubes -> af
+    float TOPBAR_HEIGHT -> O
+    float WIDTH -> P
+    float HEIGHT -> Q
+    float V_SPACE -> R
+    float H_SPACE -> S
+    float PIECE_SIZE -> T
+    float SPRITE_SIZE -> U
+    float SMALL_PIECE_SIZE -> V
+    float LEVEL_IMAGE_SIZE -> W
+    float LEVEL_IMAGE_OFF_SIZE -> X
+    int LEVEL_MAX -> Y
+    float SPRITESIZE -> Z
+    java.util.List levels -> aa
+    java.util.Map levelSpriteMap -> ab
+    com.badlogic.gdx.graphics.g2d.Sprite[] pieces -> ac
+    com.badlogic.gdx.graphics.g2d.BitmapFont gameFont -> ad
+    com.badlogic.gdx.graphics.g2d.BitmapFont otherFont -> ae
     void load() -> a
     void creteMagicCubes(com.badlogic.gdx.graphics.g2d.TextureAtlas) -> a
     void createLevelSprite(com.badlogic.gdx.graphics.g2d.TextureAtlas) -> b
-    void loadAd() -> b
-    java.lang.String getUrl(java.lang.String[],java.lang.String) -> a
     void playSound(com.badlogic.gdx.audio.Sound) -> a
 com.ads.puzzle.flag.PEvent -> com.ads.puzzle.flag.c:
     void pay() -> a
-    void exit$3749f43() -> b
+    void exit(com.ads.puzzle.flag.screen.MainScreen) -> a
     void sos(com.ads.puzzle.flag.screen.GameScreen) -> a
-    void invalidateSos() -> c
-    void resetGame() -> d
-    void share() -> e
-    void install(java.lang.String) -> a
-    boolean isNetworkEnable() -> f
-    void save() -> g
+    void invalidateSos() -> b
+    void resetGame() -> c
+    void share() -> d
+    void install$5d5e820e(android.support.v4.util.DebugUtils) -> a
+    boolean isNetworkEnable() -> e
+    void save() -> f
+    void about() -> g
+    void netSlowInfo() -> h
 com.ads.puzzle.flag.Puzzle -> com.ads.puzzle.flag.d:
     com.ads.puzzle.flag.screen.MainScreen mainScreen -> a
     com.ads.puzzle.flag.PEvent pEvent -> b
@@ -2489,7 +2490,7 @@ com.ads.puzzle.flag.Puzzle -> com.ads.puzzle.flag.d:
 com.ads.puzzle.flag.actors.Area -> com.ads.puzzle.flag.a.a:
     int id -> a
     int pieceId -> b
-    float size -> c
+    float pieceSize -> c
     float x5 -> d
     float x4 -> e
     float x3 -> f
@@ -2511,10 +2512,7 @@ com.ads.puzzle.flag.actors.Area -> com.ads.puzzle.flag.a.a:
     void setPieceId(int) -> a
     void draw(com.badlogic.gdx.graphics.g2d.Batch,float) -> draw
 com.ads.puzzle.flag.actors.Challenge -> com.ads.puzzle.flag.a.b:
-    float imageSize -> a
 com.ads.puzzle.flag.actors.Gate -> com.ads.puzzle.flag.a.c:
-    int gateNum -> a
-    int getGateNum() -> a
 com.ads.puzzle.flag.actors.Piece -> com.ads.puzzle.flag.a.d:
     int area -> a
     int orientation -> b
@@ -2527,103 +2525,141 @@ com.ads.puzzle.flag.actors.Piece -> com.ads.puzzle.flag.a.d:
     void setOrientation(int) -> b
     int getId() -> e
 com.ads.puzzle.flag.android.AndroidLauncher -> com.ads.puzzle.flag.android.AndroidLauncher:
-    java.lang.String adAtlasStr -> a
-    java.io.File adAtlas -> b
-    java.lang.String urlStr -> c
-    java.io.File url -> d
-    boolean initFail -> e
+    int BUYSTARNUM -> a
+    com.ads.puzzle.flag.android.PEventImpl pEvent -> b
+    boolean initFail -> c
     void onCreate(android.os.Bundle) -> onCreate
     void onBackPressed() -> onBackPressed
     boolean isNetwork() -> a
     void onInitCallback(int,java.lang.String) -> onInitCallback
     java.util.List onReceiveOrders(java.util.List) -> onReceiveOrders
     void loadGameConfig() -> b
-    void getObjectWithDestFile(com.baidu.inf.iis.bcs.BaiduBCS,java.lang.String,java.io.File) -> a
-    void access$000(com.ads.puzzle.flag.android.AndroidLauncher) -> a
 com.ads.puzzle.flag.android.AndroidLauncher$1 -> com.ads.puzzle.flag.android.a:
-    com.ads.puzzle.flag.android.AndroidLauncher this$0 -> a
-    void run() -> run
-com.ads.puzzle.flag.android.AndroidLauncher$2 -> com.ads.puzzle.flag.android.b:
     void onShowSuccess() -> onShowSuccess
     void onShowFailed() -> onShowFailed
+com.ads.puzzle.flag.android.AndroidLauncher$2 -> com.ads.puzzle.flag.android.b:
+    void OnPayProcess(int) -> OnPayProcess
 com.ads.puzzle.flag.android.AndroidLauncher$3 -> com.ads.puzzle.flag.android.c:
     com.ads.puzzle.flag.android.AndroidLauncher this$0 -> a
-    void OnPayProcess(int) -> OnPayProcess
-com.ads.puzzle.flag.android.AndroidLauncher$4 -> com.ads.puzzle.flag.android.d:
     void run() -> run
+com.ads.puzzle.flag.android.AndroidLauncher$3$1 -> com.ads.puzzle.flag.android.d:
+    void onClick(android.content.DialogInterface,int) -> onClick
 com.ads.puzzle.flag.android.PEventImpl -> com.ads.puzzle.flag.android.e:
-    com.ads.puzzle.flag.android.AndroidLauncher launcher -> a
-    java.lang.String title -> b
-    android.app.ProgressDialog progressDialog -> c
-    android.os.Handler handler -> d
-    java.lang.String gameLogoImage -> e
-    void openNetworkFailDlg() -> h
+    java.lang.String adAtlasStr -> a
+    java.io.File adAtlas -> b
+    java.lang.String urlStr -> c
+    java.io.File url -> d
+    com.ads.puzzle.flag.android.AndroidLauncher launcher -> e
+    java.lang.String title -> f
+    android.app.ProgressDialog progressDialog -> g
+    android.os.Handler handler -> h
+    java.lang.String gameLogoImage -> i
+    void openNetworkFailDlg() -> i
     void pay() -> a
-    void exit$3749f43() -> b
-    void save() -> g
+    void exit(com.ads.puzzle.flag.screen.MainScreen) -> a
+    void save() -> f
+    void about() -> g
+    void netSlowInfo() -> h
     void sos(com.ads.puzzle.flag.screen.GameScreen) -> a
-    void invalidateSos() -> c
-    void resetGame() -> d
-    void share() -> e
-    void install(java.lang.String) -> a
-    boolean isNetworkEnable() -> f
-    boolean note_Intent(android.content.Context) -> a
-    void showShare() -> i
-    java.io.File downLoadFile(java.lang.String) -> b
+    void invalidateSos() -> b
+    void resetGame() -> c
+    void share() -> d
+    void install$5d5e820e(android.support.v4.util.DebugUtils) -> a
+    boolean isNetworkEnable() -> e
+    boolean isConnect2Net(android.content.Context) -> a
+    void showShare() -> j
+    java.io.File downLoadFile(java.lang.String) -> a
+    void getObjectWithDestFile(com.baidu.inf.iis.bcs.BaiduBCS,java.lang.String,java.io.File) -> a
     java.lang.String access$000(com.ads.puzzle.flag.android.PEventImpl) -> a
     com.ads.puzzle.flag.android.AndroidLauncher access$100(com.ads.puzzle.flag.android.PEventImpl) -> b
-    void access$200(com.ads.puzzle.flag.android.PEventImpl) -> c
-    java.lang.String access$300(com.ads.puzzle.flag.android.PEventImpl) -> d
-    void access$400(com.ads.puzzle.flag.android.PEventImpl) -> e
+    void access$200(com.ads.puzzle.flag.android.PEventImpl,int,int) -> a
+    void access$300(com.ads.puzzle.flag.android.PEventImpl) -> c
+    void access$400(com.ads.puzzle.flag.android.PEventImpl) -> d
+    java.io.File access$500(com.ads.puzzle.flag.android.PEventImpl,java.lang.String) -> a
+    void access$600(com.ads.puzzle.flag.android.PEventImpl,java.io.File) -> a
+    void access$700(com.ads.puzzle.flag.android.PEventImpl) -> e
+    java.lang.String access$800(com.ads.puzzle.flag.android.PEventImpl) -> f
 com.ads.puzzle.flag.android.PEventImpl$1 -> com.ads.puzzle.flag.android.f:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
     void run() -> run
 com.ads.puzzle.flag.android.PEventImpl$1$1 -> com.ads.puzzle.flag.android.g:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$2 -> com.ads.puzzle.flag.android.h:
+com.ads.puzzle.flag.android.PEventImpl$10 -> com.ads.puzzle.flag.android.h:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.android.PEventImpl$2$1 -> com.ads.puzzle.flag.android.i:
+com.ads.puzzle.flag.android.PEventImpl$11 -> com.ads.puzzle.flag.android.i:
+    com.ads.puzzle.flag.android.PEventImpl this$0 -> a
+    void run() -> run
+com.ads.puzzle.flag.android.PEventImpl$2 -> com.ads.puzzle.flag.android.j:
+    com.ads.puzzle.flag.android.PEventImpl this$0 -> a
+    void run() -> run
+com.ads.puzzle.flag.android.PEventImpl$2$1 -> com.ads.puzzle.flag.android.k:
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$2$2 -> com.ads.puzzle.flag.android.l:
     com.ads.puzzle.flag.android.PEventImpl$2 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$2$2 -> com.ads.puzzle.flag.android.j:
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$2$3 -> com.ads.puzzle.flag.android.k:
-    com.ads.puzzle.flag.android.PEventImpl$2 this$1 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$3 -> com.ads.puzzle.flag.android.l:
-    com.ads.puzzle.flag.screen.GameScreen val$gs -> a
+com.ads.puzzle.flag.android.PEventImpl$3 -> com.ads.puzzle.flag.android.m:
+    com.ads.puzzle.flag.screen.MainScreen val$ms -> a
     com.ads.puzzle.flag.android.PEventImpl this$0 -> b
     void run() -> run
-com.ads.puzzle.flag.android.PEventImpl$3$1 -> com.ads.puzzle.flag.android.m:
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$3$2 -> com.ads.puzzle.flag.android.n:
+com.ads.puzzle.flag.android.PEventImpl$3$1 -> com.ads.puzzle.flag.android.n:
     com.ads.puzzle.flag.android.PEventImpl$3 this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$4 -> com.ads.puzzle.flag.android.o:
+com.ads.puzzle.flag.android.PEventImpl$3$2 -> com.ads.puzzle.flag.android.o:
+    com.ads.puzzle.flag.android.PEventImpl$3 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$3$3 -> com.ads.puzzle.flag.android.p:
+    com.ads.puzzle.flag.android.PEventImpl$3 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$4 -> com.ads.puzzle.flag.android.q:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.android.PEventImpl$4$1 -> com.ads.puzzle.flag.android.p:
-    com.ads.puzzle.flag.android.PEventImpl$4 this$1 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$4$2 -> com.ads.puzzle.flag.android.q:
-    com.ads.puzzle.flag.android.PEventImpl$4 this$1 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$4$3 -> com.ads.puzzle.flag.android.r:
+com.ads.puzzle.flag.android.PEventImpl$4$1 -> com.ads.puzzle.flag.android.r:
     void onClick(android.content.DialogInterface,int) -> onClick
 com.ads.puzzle.flag.android.PEventImpl$5 -> com.ads.puzzle.flag.android.s:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
     void run() -> run
 com.ads.puzzle.flag.android.PEventImpl$5$1 -> com.ads.puzzle.flag.android.t:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$5$2 -> com.ads.puzzle.flag.android.u:
-    com.ads.puzzle.flag.android.PEventImpl$5 this$1 -> a
+com.ads.puzzle.flag.android.PEventImpl$6 -> com.ads.puzzle.flag.android.u:
+    com.ads.puzzle.flag.screen.GameScreen val$gs -> a
+    com.ads.puzzle.flag.android.PEventImpl this$0 -> b
+    void run() -> run
+com.ads.puzzle.flag.android.PEventImpl$6$1 -> com.ads.puzzle.flag.android.v:
     void onClick(android.content.DialogInterface,int) -> onClick
-com.ads.puzzle.flag.android.PEventImpl$6 -> com.ads.puzzle.flag.android.v:
+com.ads.puzzle.flag.android.PEventImpl$6$2 -> com.ads.puzzle.flag.android.w:
+    com.ads.puzzle.flag.android.PEventImpl$6 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$7 -> com.ads.puzzle.flag.android.x:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.android.PEventImpl$7 -> com.ads.puzzle.flag.android.w:
+com.ads.puzzle.flag.android.PEventImpl$7$1 -> com.ads.puzzle.flag.android.y:
+    com.ads.puzzle.flag.android.PEventImpl$7 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$7$2 -> com.ads.puzzle.flag.android.z:
+    com.ads.puzzle.flag.android.PEventImpl$7 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$7$3 -> com.ads.puzzle.flag.android.A:
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$8 -> com.ads.puzzle.flag.android.B:
     com.ads.puzzle.flag.android.PEventImpl this$0 -> a
+    void run() -> run
+com.ads.puzzle.flag.android.PEventImpl$8$1 -> com.ads.puzzle.flag.android.C:
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$8$2 -> com.ads.puzzle.flag.android.D:
+    com.ads.puzzle.flag.android.PEventImpl$8 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$9 -> com.ads.puzzle.flag.android.E:
+    android.support.v4.util.DebugUtils val$series$702d04d9 -> a
+    com.ads.puzzle.flag.android.PEventImpl this$0 -> b
+    void run() -> run
+com.ads.puzzle.flag.android.PEventImpl$9$1 -> com.ads.puzzle.flag.android.F:
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$9$2 -> com.ads.puzzle.flag.android.G:
+    com.ads.puzzle.flag.android.PEventImpl$9 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.ads.puzzle.flag.android.PEventImpl$9$2$1 -> com.ads.puzzle.flag.android.H:
+    com.ads.puzzle.flag.android.PEventImpl$9$2 this$2 -> a
     void run() -> run
 com.ads.puzzle.flag.android.R$attr -> com.ads.puzzle.flag.android.R$attr:
 com.ads.puzzle.flag.android.R$color -> com.ads.puzzle.flag.android.R$color:
@@ -2879,6 +2915,7 @@ com.ads.puzzle.flag.android.wxapi.WXEntryActivity -> com.ads.puzzle.flag.android
 com.ads.puzzle.flag.controller.AreaController -> com.ads.puzzle.flag.b.a:
     com.ads.puzzle.flag.actors.Area[] areas -> a
     com.badlogic.gdx.math.Rectangle bounds -> b
+    void buildArea(int) -> a
     com.badlogic.gdx.math.Rectangle getBounds() -> a
     com.ads.puzzle.flag.actors.Area[] getAreas() -> b
     void handler() -> c
@@ -2887,20 +2924,22 @@ com.ads.puzzle.flag.controller.ChallengeController -> com.ads.puzzle.flag.b.b:
     int level -> b
     int gateNum -> c
     void handler() -> a
+    void buildChallenge(int,int) -> a
     int getGateNum() -> b
 com.ads.puzzle.flag.controller.IController -> com.ads.puzzle.flag.b.c:
 com.ads.puzzle.flag.controller.PieceController -> com.ads.puzzle.flag.b.d:
-    com.badlogic.gdx.math.Rectangle fixArea -> a
+    com.badlogic.gdx.math.Rectangle fixAreaBounds -> a
     void handler() -> a
     com.badlogic.gdx.math.Rectangle getFixAreaBounds() -> b
 com.ads.puzzle.flag.listener.LevelDetector -> com.ads.puzzle.flag.c.a:
 com.ads.puzzle.flag.listener.LevelListener -> com.ads.puzzle.flag.c.b:
-    com.badlogic.gdx.scenes.scene2d.Stage stage -> a
-    com.ads.puzzle.flag.Puzzle puzzle -> b
-    com.badlogic.gdx.math.Vector3 touchPoint -> c
-    float position -> d
-    float prex -> e
-    float currentx -> f
+    com.ads.puzzle.flag.screen.GateScreen gateScreen -> a
+    com.badlogic.gdx.scenes.scene2d.Stage stage -> b
+    com.ads.puzzle.flag.Puzzle puzzle -> c
+    com.badlogic.gdx.math.Vector3 touchPoint -> d
+    float position -> e
+    float prex -> f
+    float currentx -> g
     float getPosition() -> a
     void setPosition(float) -> a
     boolean touchDown(float,float,int,int) -> touchDown
@@ -2924,165 +2963,177 @@ com.ads.puzzle.flag.listener.PieceListener -> com.ads.puzzle.flag.c.d:
     com.ads.puzzle.flag.actors.Area[] areaActors -> e
     com.badlogic.gdx.utils.SnapshotArray pieceActors -> f
     com.ads.puzzle.flag.actors.Piece downActor -> g
-    float raw_x -> h
-    float raw_y -> i
-    float w -> j
-    float h -> k
+    com.ads.puzzle.flag.screen.GameScreen gameScreen -> h
+    float raw_x -> i
+    float raw_y -> j
+    float w -> k
+    float h -> l
     boolean touchDown(float,float,int,int) -> touchDown
     boolean tap(float,float,int,int) -> tap
     boolean pan(float,float,float,float) -> pan
     boolean fling(float,float,int) -> fling
-com.ads.puzzle.flag.screen.AboutScreen -> com.ads.puzzle.flag.d.a:
-    com.badlogic.gdx.scenes.scene2d.ui.Image aboutImage -> b
-    com.ads.puzzle.flag.screen.BaseScreen gameScreen -> c
-    void show() -> show
-    com.ads.puzzle.flag.screen.BaseScreen access$000(com.ads.puzzle.flag.screen.AboutScreen) -> a
-com.ads.puzzle.flag.screen.AboutScreen$1 -> com.ads.puzzle.flag.d.b:
-    com.ads.puzzle.flag.screen.AboutScreen this$0 -> a
-    boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-    void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.AdGameScreen -> com.ads.puzzle.flag.d.c:
-    float margin -> b
-    float seriesW -> c
-    float seriesH -> d
-    com.ads.puzzle.flag.screen.BaseScreen baseScreen -> e
+com.ads.puzzle.flag.screen.AdGameScreen -> com.ads.puzzle.flag.d.a:
+    java.util.List seriesList -> b
+    float margin -> c
+    float seriesW -> d
+    float seriesH -> e
+    com.ads.puzzle.flag.screen.BaseScreen baseScreen -> f
     void show() -> show
     void render(float) -> render
+    java.lang.String getUrl(java.lang.String[],java.lang.String) -> a
     com.ads.puzzle.flag.screen.BaseScreen access$000(com.ads.puzzle.flag.screen.AdGameScreen) -> a
-com.ads.puzzle.flag.screen.AdGameScreen$1 -> com.ads.puzzle.flag.d.d:
+com.ads.puzzle.flag.screen.AdGameScreen$1 -> com.ads.puzzle.flag.d.b:
     android.support.v4.util.DebugUtils val$series$702d04d9 -> a
     com.ads.puzzle.flag.screen.AdGameScreen this$0 -> b
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-com.ads.puzzle.flag.screen.AdGameScreen$2 -> com.ads.puzzle.flag.d.e:
+com.ads.puzzle.flag.screen.AdGameScreen$2 -> com.ads.puzzle.flag.d.c:
     com.ads.puzzle.flag.screen.AdGameScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.BaseScreen -> com.ads.puzzle.flag.d.f:
-    com.badlogic.gdx.scenes.scene2d.Stage stage -> b
-    com.badlogic.gdx.graphics.g2d.Batch batch -> c
-    com.ads.puzzle.flag.Puzzle puzzle -> d
-    com.badlogic.gdx.graphics.g2d.BitmapFont gameFont -> e
-    com.badlogic.gdx.graphics.g2d.BitmapFont otherFont -> f
-    float y_bar -> g
+com.ads.puzzle.flag.screen.BaseScreen -> com.ads.puzzle.flag.d.d:
+    boolean show -> b
+    boolean backFlag -> c
+    float y_bar -> d
+    com.badlogic.gdx.scenes.scene2d.Stage stage -> e
+    com.badlogic.gdx.graphics.g2d.Batch batch -> f
+    com.ads.puzzle.flag.Puzzle puzzle -> g
+    com.badlogic.gdx.scenes.scene2d.ui.Image layerBg -> h
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton returnBtn -> a
     void show() -> show
     void createBtns() -> a
+    void removeLayerBg() -> b
     void addActor(com.badlogic.gdx.scenes.scene2d.Actor) -> a
     void render(float) -> render
-    com.ads.puzzle.flag.Puzzle getPuzzle() -> b
-    com.badlogic.gdx.graphics.g2d.BitmapFont getGameFont() -> c
-    com.badlogic.gdx.graphics.g2d.BitmapFont getOtherFont() -> d
+    com.ads.puzzle.flag.Puzzle getPuzzle() -> c
+    com.badlogic.gdx.graphics.g2d.BitmapFont getGameFont() -> d
     com.badlogic.gdx.scenes.scene2d.Stage getStage() -> e
     com.badlogic.gdx.graphics.g2d.Batch getBatch() -> f
     float getY_bar() -> g
-com.ads.puzzle.flag.screen.GameScreen -> com.ads.puzzle.flag.d.g:
-    int level -> b
-    int gateNum -> c
-    com.ads.puzzle.flag.controller.AreaController areaCtrl -> d
-    com.ads.puzzle.flag.controller.PieceController pieceCtrl -> e
-    com.ads.puzzle.flag.controller.ChallengeController challengeCtrl -> f
-    com.ads.puzzle.flag.listener.PieceDetector gestureDetector -> g
-    boolean openResultWin -> h
-    boolean isPass -> i
-    boolean isSuspend -> j
-    com.ads.puzzle.flag.window.SupsendWin gameWindow -> k
+    boolean isShow() -> h
+    void setShow(boolean) -> a
+    boolean isBackFlag() -> i
+    void setBackFlag(boolean) -> b
+com.ads.puzzle.flag.screen.GameScreen -> com.ads.puzzle.flag.d.e:
+    java.util.concurrent.ScheduledExecutorService executorGateEnd -> b
+    java.util.concurrent.ScheduledExecutorService executStarCount -> c
+    java.util.concurrent.ScheduledExecutorService executTime -> d
+    com.badlogic.gdx.graphics.g2d.ParticleEffect effect -> e
+    com.ads.puzzle.flag.screen.GateScreen gateScreen -> f
+    com.ads.puzzle.flag.controller.AreaController areaCtrl -> g
+    com.ads.puzzle.flag.controller.PieceController pieceCtrl -> h
+    com.ads.puzzle.flag.controller.ChallengeController challengeCtrl -> i
+    com.ads.puzzle.flag.listener.PieceDetector gestureDetector -> j
+    com.ads.puzzle.flag.window.SupsendWin supsendWin -> k
     com.badlogic.gdx.InputMultiplexer multiplexer -> l
     com.badlogic.gdx.scenes.scene2d.Actor[] pieces -> m
-    boolean isUsedHelp -> n
-    boolean isUsingHelp -> o
-    int areaId -> p
-    int seconds -> q
-    java.lang.String timeStr -> r
-    boolean isShow -> s
-    int starNum -> t
-    com.badlogic.gdx.scenes.scene2d.ui.Label labTime -> u
-    com.badlogic.gdx.scenes.scene2d.ui.Label labCount -> v
-    java.util.concurrent.ScheduledExecutorService executorGateEnd -> w
-    java.util.concurrent.ScheduledExecutorService executStarCount -> x
-    java.util.concurrent.ScheduledExecutorService executTime -> y
-    com.badlogic.gdx.graphics.g2d.ParticleEffect effect -> z
+    java.lang.String timeStr -> n
+    com.badlogic.gdx.scenes.scene2d.ui.Label labTime -> o
+    com.badlogic.gdx.scenes.scene2d.ui.Label labCount -> p
+    boolean openResultWin -> q
+    boolean isPass -> r
+    boolean isSuspend -> s
+    boolean isUsedHelp -> t
+    boolean isUsingHelp -> u
+    int level -> v
+    int gateNum -> w
+    int areaId -> x
+    int seconds -> y
+    int starNum -> z
     void show() -> show
     void render(float) -> render
-    void resumeTimer() -> h
-    void createTimer() -> m
+    void resumeTimer() -> j
+    void createTimer() -> p
     void pause() -> pause
-    int getLevel() -> i
-    void return2init() -> j
-    void refreshGame() -> k
-    void useSos() -> l
+    void return2init() -> k
+    void refreshGame() -> l
+    void useSos() -> m
     void setGateNum(int) -> a
+    boolean isSuspend() -> n
+    com.ads.puzzle.flag.screen.GateScreen getGateScreen() -> o
     void access$000(com.ads.puzzle.flag.screen.GameScreen) -> a
     com.ads.puzzle.flag.window.SupsendWin access$102(com.ads.puzzle.flag.screen.GameScreen,com.ads.puzzle.flag.window.SupsendWin) -> a
     int access$200(com.ads.puzzle.flag.screen.GameScreen) -> b
     com.ads.puzzle.flag.window.SupsendWin access$100(com.ads.puzzle.flag.screen.GameScreen) -> c
-    int access$308(com.ads.puzzle.flag.screen.GameScreen) -> d
-    int access$300(com.ads.puzzle.flag.screen.GameScreen) -> e
-    boolean access$402(com.ads.puzzle.flag.screen.GameScreen,boolean) -> a
-    boolean access$500(com.ads.puzzle.flag.screen.GameScreen) -> f
-    int access$608(com.ads.puzzle.flag.screen.GameScreen) -> g
-    int access$600(com.ads.puzzle.flag.screen.GameScreen) -> h
-    java.lang.String access$702(com.ads.puzzle.flag.screen.GameScreen,java.lang.String) -> a
-com.ads.puzzle.flag.screen.GameScreen$1 -> com.ads.puzzle.flag.d.h:
+    com.ads.puzzle.flag.screen.GateScreen access$300(com.ads.puzzle.flag.screen.GameScreen) -> d
+    int access$408(com.ads.puzzle.flag.screen.GameScreen) -> e
+    int access$400(com.ads.puzzle.flag.screen.GameScreen) -> f
+    boolean access$502(com.ads.puzzle.flag.screen.GameScreen,boolean) -> a
+    boolean access$600(com.ads.puzzle.flag.screen.GameScreen) -> g
+    int access$708(com.ads.puzzle.flag.screen.GameScreen) -> h
+    int access$700(com.ads.puzzle.flag.screen.GameScreen) -> i
+    java.lang.String access$802(com.ads.puzzle.flag.screen.GameScreen,java.lang.String) -> a
+com.ads.puzzle.flag.screen.GameScreen$1 -> com.ads.puzzle.flag.d.f:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.GameScreen$2 -> com.ads.puzzle.flag.d.i:
+com.ads.puzzle.flag.screen.GameScreen$2 -> com.ads.puzzle.flag.d.g:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.GameScreen$3 -> com.ads.puzzle.flag.d.j:
+com.ads.puzzle.flag.screen.GameScreen$3 -> com.ads.puzzle.flag.d.h:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.GameScreen$4 -> com.ads.puzzle.flag.d.k:
+com.ads.puzzle.flag.screen.GameScreen$4 -> com.ads.puzzle.flag.d.i:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.GameScreen$5 -> com.ads.puzzle.flag.d.l:
+com.ads.puzzle.flag.screen.GameScreen$5 -> com.ads.puzzle.flag.d.j:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.screen.GameScreen$6 -> com.ads.puzzle.flag.d.m:
+com.ads.puzzle.flag.screen.GameScreen$6 -> com.ads.puzzle.flag.d.k:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.screen.GameScreen$7 -> com.ads.puzzle.flag.d.n:
+com.ads.puzzle.flag.screen.GameScreen$7 -> com.ads.puzzle.flag.d.l:
     com.ads.puzzle.flag.screen.GameScreen this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.screen.GateScreen -> com.ads.puzzle.flag.d.o:
-    int level -> b
-    int starNum -> c
+com.ads.puzzle.flag.screen.GateScreen -> com.ads.puzzle.flag.d.m:
+    com.ads.puzzle.flag.screen.LevelScreen levelScreen -> b
+    com.ads.puzzle.flag.screen.GameScreen gameScreen -> c
+    com.ads.puzzle.flag.actors.Gate[] gates -> d
+    int level -> e
     void show() -> show
-    int access$000(com.ads.puzzle.flag.screen.GateScreen) -> a
-com.ads.puzzle.flag.screen.GateScreen$1 -> com.ads.puzzle.flag.d.p:
+    java.lang.String getStarNumInfo() -> j
+    void buildGateImage(int) -> a
+    void render(float) -> render
+    com.ads.puzzle.flag.screen.LevelScreen access$000(com.ads.puzzle.flag.screen.GateScreen) -> a
+    com.ads.puzzle.flag.screen.GameScreen access$100(com.ads.puzzle.flag.screen.GateScreen) -> b
+com.ads.puzzle.flag.screen.GateScreen$1 -> com.ads.puzzle.flag.d.n:
     com.ads.puzzle.flag.screen.GateScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-com.ads.puzzle.flag.screen.GateScreen$2 -> com.ads.puzzle.flag.d.q:
-    com.ads.puzzle.flag.actors.Gate val$gate -> a
+com.ads.puzzle.flag.screen.GateScreen$2 -> com.ads.puzzle.flag.d.o:
+    int val$gateNum -> a
     com.ads.puzzle.flag.screen.GateScreen this$0 -> b
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-com.ads.puzzle.flag.screen.HelpScreen -> com.ads.puzzle.flag.d.r:
+com.ads.puzzle.flag.screen.HelpScreen -> com.ads.puzzle.flag.d.p:
     com.badlogic.gdx.scenes.scene2d.ui.Image readmeImage -> b
-    com.ads.puzzle.flag.screen.BaseScreen gameScreen -> c
+    com.ads.puzzle.flag.screen.BaseScreen baseScreen -> c
     void show() -> show
+    void render(float) -> render
+    void setBaseScreen(com.ads.puzzle.flag.screen.BaseScreen) -> a
     com.ads.puzzle.flag.screen.BaseScreen access$000(com.ads.puzzle.flag.screen.HelpScreen) -> a
-com.ads.puzzle.flag.screen.HelpScreen$1 -> com.ads.puzzle.flag.d.s:
+com.ads.puzzle.flag.screen.HelpScreen$1 -> com.ads.puzzle.flag.d.q:
     com.ads.puzzle.flag.screen.HelpScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.LevelScreen -> com.ads.puzzle.flag.d.t:
+com.ads.puzzle.flag.screen.LevelScreen -> com.ads.puzzle.flag.d.r:
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton leftBtn -> b
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton rightBtn -> c
-    float lockX -> d
-    float lockY -> e
-    float lockSize -> f
-    float levelSize -> g
-    int level -> h
-    com.ads.puzzle.flag.listener.LevelListener levelListener -> i
+    com.ads.puzzle.flag.listener.LevelListener levelListener -> d
+    com.badlogic.gdx.InputMultiplexer multiplexer -> e
+    float lockX -> f
+    float lockY -> g
+    float lockSize -> h
+    float levelSize -> i
     float targetposition -> j
     float initPosition -> k
-    boolean isAddLock -> l
+    int level -> l
+    boolean isAddLock -> m
     void show() -> show
-    void lock() -> j
+    void lock() -> m
     void render(float) -> render
+    int getLevel() -> k
+    void setLevel(int) -> a
     int access$000(com.ads.puzzle.flag.screen.LevelScreen) -> a
     int access$010(com.ads.puzzle.flag.screen.LevelScreen) -> b
     com.ads.puzzle.flag.listener.LevelListener access$100(com.ads.puzzle.flag.screen.LevelScreen) -> c
@@ -3090,110 +3141,114 @@ com.ads.puzzle.flag.screen.LevelScreen -> com.ads.puzzle.flag.d.t:
     int access$008(com.ads.puzzle.flag.screen.LevelScreen) -> e
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton access$300(com.ads.puzzle.flag.screen.LevelScreen) -> f
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton access$400(com.ads.puzzle.flag.screen.LevelScreen) -> g
-com.ads.puzzle.flag.screen.LevelScreen$1 -> com.ads.puzzle.flag.d.u:
+com.ads.puzzle.flag.screen.LevelScreen$1 -> com.ads.puzzle.flag.d.s:
     com.ads.puzzle.flag.screen.LevelScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-com.ads.puzzle.flag.screen.LevelScreen$2 -> com.ads.puzzle.flag.d.v:
+com.ads.puzzle.flag.screen.LevelScreen$2 -> com.ads.puzzle.flag.d.t:
     com.ads.puzzle.flag.screen.LevelScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-com.ads.puzzle.flag.screen.LevelScreen$3 -> com.ads.puzzle.flag.d.w:
+com.ads.puzzle.flag.screen.LevelScreen$3 -> com.ads.puzzle.flag.d.u:
     com.ads.puzzle.flag.screen.LevelScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.LevelScreen$4 -> com.ads.puzzle.flag.d.x:
+com.ads.puzzle.flag.screen.LevelScreen$4 -> com.ads.puzzle.flag.d.v:
     com.ads.puzzle.flag.screen.LevelScreen this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.screen.MainScreen -> com.ads.puzzle.flag.d.y:
+com.ads.puzzle.flag.screen.MainScreen -> com.ads.puzzle.flag.d.w:
     com.ads.puzzle.flag.Puzzle puzzle -> b
+    com.ads.puzzle.flag.screen.LevelScreen levelScreen -> c
+    com.ads.puzzle.flag.screen.SettingScreen settingScreen -> d
+    com.ads.puzzle.flag.screen.HelpScreen helpScreen -> e
+    boolean touchBack -> f
     void show() -> show
     void pause() -> pause
     void dispose() -> dispose
-    com.ads.puzzle.flag.Puzzle access$000(com.ads.puzzle.flag.screen.MainScreen) -> a
-com.ads.puzzle.flag.screen.MainScreen$1 -> com.ads.puzzle.flag.d.z:
+    void render(float) -> render
+    com.ads.puzzle.flag.screen.HelpScreen getHelpScreen() -> j
+    com.ads.puzzle.flag.screen.LevelScreen getLevelScreen() -> k
+    void setTouchBack(boolean) -> c
+    com.ads.puzzle.flag.screen.LevelScreen access$000(com.ads.puzzle.flag.screen.MainScreen) -> a
+    com.ads.puzzle.flag.Puzzle access$100(com.ads.puzzle.flag.screen.MainScreen) -> b
+    com.ads.puzzle.flag.screen.SettingScreen access$200(com.ads.puzzle.flag.screen.MainScreen) -> c
+    com.ads.puzzle.flag.screen.HelpScreen access$300(com.ads.puzzle.flag.screen.MainScreen) -> d
+com.ads.puzzle.flag.screen.MainScreen$1 -> com.ads.puzzle.flag.d.x:
     com.ads.puzzle.flag.screen.MainScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.MainScreen$2 -> com.ads.puzzle.flag.d.A:
+com.ads.puzzle.flag.screen.MainScreen$2 -> com.ads.puzzle.flag.d.y:
     com.ads.puzzle.flag.screen.MainScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.MainScreen$3 -> com.ads.puzzle.flag.d.B:
+com.ads.puzzle.flag.screen.MainScreen$3 -> com.ads.puzzle.flag.d.z:
     com.ads.puzzle.flag.screen.MainScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.MainScreen$4 -> com.ads.puzzle.flag.d.C:
+com.ads.puzzle.flag.screen.MainScreen$4 -> com.ads.puzzle.flag.d.A:
     com.ads.puzzle.flag.screen.MainScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.OtherScreen -> com.ads.puzzle.flag.d.D:
+com.ads.puzzle.flag.screen.MainScreen$5 -> com.ads.puzzle.flag.d.B:
+    com.ads.puzzle.flag.screen.MainScreen this$0 -> a
+    boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
+    void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
+com.ads.puzzle.flag.screen.OtherScreen -> com.ads.puzzle.flag.d.C:
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton shareBtn -> b
     com.badlogic.gdx.scenes.scene2d.ui.ImageButton adBtn -> c
     com.badlogic.gdx.scenes.scene2d.ui.Image star -> d
     com.badlogic.gdx.scenes.scene2d.ui.Label starLabel -> e
     void show() -> show
     void createBtns() -> a
-    com.badlogic.gdx.scenes.scene2d.ui.Label getStarLabel() -> h
-    int getStarNum() -> i
-com.ads.puzzle.flag.screen.OtherScreen$1 -> com.ads.puzzle.flag.d.E:
+    java.lang.String getStarNumInfo() -> j
+    int getStarNum() -> k
+    void setStarNum() -> l
+com.ads.puzzle.flag.screen.OtherScreen$1 -> com.ads.puzzle.flag.d.D:
     com.ads.puzzle.flag.screen.OtherScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.OtherScreen$2 -> com.ads.puzzle.flag.d.F:
+com.ads.puzzle.flag.screen.OtherScreen$2 -> com.ads.puzzle.flag.d.E:
     com.ads.puzzle.flag.screen.OtherScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen -> com.ads.puzzle.flag.d.G:
-    com.ads.puzzle.flag.Puzzle game -> b
+com.ads.puzzle.flag.screen.SettingScreen -> com.ads.puzzle.flag.d.F:
+    com.ads.puzzle.flag.Puzzle puzzle -> b
     com.badlogic.gdx.scenes.scene2d.ui.Image noMusic -> c
     com.badlogic.gdx.scenes.scene2d.ui.Image noSound -> d
     void show() -> show
-    com.badlogic.gdx.scenes.scene2d.ui.Image access$000(com.ads.puzzle.flag.screen.SettingScreen) -> a
+    void render(float) -> render
+    com.ads.puzzle.flag.Puzzle access$000(com.ads.puzzle.flag.screen.SettingScreen) -> a
     com.badlogic.gdx.scenes.scene2d.ui.Image access$100(com.ads.puzzle.flag.screen.SettingScreen) -> b
-    com.ads.puzzle.flag.Puzzle access$200(com.ads.puzzle.flag.screen.SettingScreen) -> c
-com.ads.puzzle.flag.screen.SettingScreen$1 -> com.ads.puzzle.flag.d.H:
+    com.badlogic.gdx.scenes.scene2d.ui.Image access$200(com.ads.puzzle.flag.screen.SettingScreen) -> c
+com.ads.puzzle.flag.screen.SettingScreen$1 -> com.ads.puzzle.flag.d.G:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen$2 -> com.ads.puzzle.flag.d.I:
+com.ads.puzzle.flag.screen.SettingScreen$2 -> com.ads.puzzle.flag.d.H:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen$3 -> com.ads.puzzle.flag.d.J:
+com.ads.puzzle.flag.screen.SettingScreen$3 -> com.ads.puzzle.flag.d.I:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen$4 -> com.ads.puzzle.flag.d.K:
+com.ads.puzzle.flag.screen.SettingScreen$4 -> com.ads.puzzle.flag.d.J:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen$5 -> com.ads.puzzle.flag.d.L:
+com.ads.puzzle.flag.screen.SettingScreen$5 -> com.ads.puzzle.flag.d.K:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen$6 -> com.ads.puzzle.flag.d.M:
+com.ads.puzzle.flag.screen.SettingScreen$6 -> com.ads.puzzle.flag.d.L:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.screen.SettingScreen$7 -> com.ads.puzzle.flag.d.N:
+com.ads.puzzle.flag.screen.SettingScreen$7 -> com.ads.puzzle.flag.d.M:
     com.ads.puzzle.flag.screen.SettingScreen this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.AdGameWin -> com.ads.puzzle.flag.e.a:
-    com.ads.puzzle.flag.screen.AdGameScreen gameScreen -> b
-    java.lang.String apkUrl -> c
-    java.lang.String access$000(com.ads.puzzle.flag.window.AdGameWin) -> a
-    com.ads.puzzle.flag.screen.AdGameScreen access$100(com.ads.puzzle.flag.window.AdGameWin) -> b
-com.ads.puzzle.flag.window.AdGameWin$1 -> com.ads.puzzle.flag.e.b:
-    com.ads.puzzle.flag.window.AdGameWin this$0 -> a
-    boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-    void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.AdGameWin$2 -> com.ads.puzzle.flag.e.c:
-    com.ads.puzzle.flag.window.AdGameWin this$0 -> a
-    boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
-    void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.BaseWin -> com.ads.puzzle.flag.e.d:
+com.ads.puzzle.flag.window.BaseWin -> com.ads.puzzle.flag.e.a:
     com.badlogic.gdx.scenes.scene2d.ui.Image layerBg -> a
-com.ads.puzzle.flag.window.ResultWin -> com.ads.puzzle.flag.e.e:
+com.ads.puzzle.flag.window.ResultWin -> com.ads.puzzle.flag.e.b:
     com.ads.puzzle.flag.screen.GameScreen gameScreen -> b
     float space -> c
     com.badlogic.gdx.scenes.scene2d.ui.Image[] star_nulls -> d
@@ -3218,22 +3273,22 @@ com.ads.puzzle.flag.window.ResultWin -> com.ads.puzzle.flag.e.e:
     com.badlogic.gdx.scenes.scene2d.Group access$400(com.ads.puzzle.flag.window.ResultWin) -> e
     int access$508(com.ads.puzzle.flag.window.ResultWin) -> f
     int access$500(com.ads.puzzle.flag.window.ResultWin) -> g
-com.ads.puzzle.flag.window.ResultWin$1 -> com.ads.puzzle.flag.e.f:
+com.ads.puzzle.flag.window.ResultWin$1 -> com.ads.puzzle.flag.e.c:
     com.ads.puzzle.flag.window.ResultWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.ResultWin$2 -> com.ads.puzzle.flag.e.g:
+com.ads.puzzle.flag.window.ResultWin$2 -> com.ads.puzzle.flag.e.d:
     com.ads.puzzle.flag.window.ResultWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.ResultWin$3 -> com.ads.puzzle.flag.e.h:
+com.ads.puzzle.flag.window.ResultWin$3 -> com.ads.puzzle.flag.e.e:
     com.ads.puzzle.flag.window.ResultWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.ResultWin$4 -> com.ads.puzzle.flag.e.i:
+com.ads.puzzle.flag.window.ResultWin$4 -> com.ads.puzzle.flag.e.f:
     com.ads.puzzle.flag.window.ResultWin this$0 -> a
     void run() -> run
-com.ads.puzzle.flag.window.SupsendWin -> com.ads.puzzle.flag.e.j:
+com.ads.puzzle.flag.window.SupsendWin -> com.ads.puzzle.flag.e.g:
     com.ads.puzzle.flag.Puzzle puzzle -> b
     com.ads.puzzle.flag.screen.GameScreen gameScreen -> c
     float win_H -> d
@@ -3246,43 +3301,43 @@ com.ads.puzzle.flag.window.SupsendWin -> com.ads.puzzle.flag.e.j:
     com.badlogic.gdx.scenes.scene2d.ui.Image access$200(com.ads.puzzle.flag.window.SupsendWin) -> c
     com.ads.puzzle.flag.screen.GameScreen access$300(com.ads.puzzle.flag.window.SupsendWin) -> d
     int access$400(com.ads.puzzle.flag.window.SupsendWin) -> e
-com.ads.puzzle.flag.window.SupsendWin$1 -> com.ads.puzzle.flag.e.k:
+com.ads.puzzle.flag.window.SupsendWin$1 -> com.ads.puzzle.flag.e.h:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$10 -> com.ads.puzzle.flag.e.l:
+com.ads.puzzle.flag.window.SupsendWin$10 -> com.ads.puzzle.flag.e.i:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$2 -> com.ads.puzzle.flag.e.m:
+com.ads.puzzle.flag.window.SupsendWin$2 -> com.ads.puzzle.flag.e.j:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$3 -> com.ads.puzzle.flag.e.n:
+com.ads.puzzle.flag.window.SupsendWin$3 -> com.ads.puzzle.flag.e.k:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$4 -> com.ads.puzzle.flag.e.o:
+com.ads.puzzle.flag.window.SupsendWin$4 -> com.ads.puzzle.flag.e.l:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$5 -> com.ads.puzzle.flag.e.p:
+com.ads.puzzle.flag.window.SupsendWin$5 -> com.ads.puzzle.flag.e.m:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$6 -> com.ads.puzzle.flag.e.q:
+com.ads.puzzle.flag.window.SupsendWin$6 -> com.ads.puzzle.flag.e.n:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$7 -> com.ads.puzzle.flag.e.r:
+com.ads.puzzle.flag.window.SupsendWin$7 -> com.ads.puzzle.flag.e.o:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$8 -> com.ads.puzzle.flag.e.s:
+com.ads.puzzle.flag.window.SupsendWin$8 -> com.ads.puzzle.flag.e.p:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp
-com.ads.puzzle.flag.window.SupsendWin$9 -> com.ads.puzzle.flag.e.t:
+com.ads.puzzle.flag.window.SupsendWin$9 -> com.ads.puzzle.flag.e.q:
     com.ads.puzzle.flag.window.SupsendWin this$0 -> a
     boolean touchDown(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchDown
     void touchUp(com.badlogic.gdx.scenes.scene2d.InputEvent,float,float,int,int) -> touchUp

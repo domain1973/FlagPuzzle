@@ -9,7 +9,6 @@ import com.ads.puzzle.flag.controller.ChallengeController;
 import com.ads.puzzle.flag.controller.IController;
 import com.ads.puzzle.flag.controller.PieceController;
 import com.ads.puzzle.flag.screen.GameScreen;
-import com.ads.puzzle.flag.screen.GateScreen;
 import com.ads.puzzle.flag.screen.LevelScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -100,10 +99,13 @@ public class ResultWin extends BaseWin {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 if (starNum > 0) {//时间已到,回关卡时,不能更新状态
-                    updateGateNum();
+                    int nextGateNum = updateGateNum();
+                    gameScreen.getGateScreen().buildGateImage((nextGateNum - 1 )/ Answer.GATE_MAX);
                 }
                 layerBg.remove();
-                gameScreen.getPuzzle().setScreen(new GateScreen(gameScreen.getPuzzle(), gameScreen.getLevel()));
+                ResultWin.this.remove();
+                gameScreen.refreshGame();
+                gameScreen.getPuzzle().setScreen(gameScreen.getGateScreen());
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -143,9 +145,11 @@ public class ResultWin extends BaseWin {
                 ResultWin.this.remove();
                 gameScreen.return2init();
                 if (Answer.isLasterSmallGate(nextGateNum)) {
-                    int lv = nextGateNum / 11;
+                    int lv = nextGateNum / Answer.GATE_MAX;
                     Puzzle puzzle = gameScreen.getPuzzle();
-                    puzzle.setScreen(new LevelScreen(puzzle, lv));
+                    LevelScreen levelScreen = puzzle.getMainScreen().getLevelScreen();
+                    levelScreen.setLevel(lv);
+                    puzzle.setScreen(levelScreen);
                 }
                 super.touchUp(event, x, y, pointer, button);
             }
@@ -219,7 +223,7 @@ public class ResultWin extends BaseWin {
         executStarCount.scheduleAtFixedRate(new Runnable() {
             public void run() {
                 starIndex++;
-                if (starIndex < 3) {
+                if (starIndex < starNum) {
                     Assets.playSound(Assets.starSound);
                 }
             }

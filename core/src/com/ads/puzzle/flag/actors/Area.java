@@ -1,11 +1,9 @@
 package com.ads.puzzle.flag.actors;
 
 import com.ads.puzzle.flag.Assets;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 import java.util.List;
 
@@ -15,8 +13,7 @@ import java.util.List;
 public class Area extends Group {
     private int id;
     private int pieceId;
-    private int level;
-    private float size;
+    private float pieceSize;
     private float x5;
     private float x4;
     private float x3;
@@ -38,50 +35,49 @@ public class Area extends Group {
      * 0,1
      * 2,3
      *
-     * @param id
+     * @param areaId
      */
-    public Area(int id, int level) {
-        this.id = id;
-        this.level = level;
+    public Area(int areaId, int lv) {
+        id = areaId;
         pieceId = -1;
-        size = Assets.PIECE_SIZE;
-        spriteSize = Assets.PIECE_SIZE / 3;
-        sprites = Assets.levelSpriteMap.get(level);
-        if (id == 0) {
+        pieceSize = Assets.PIECE_SIZE;
+        spriteSize = Assets.SPRITE_SIZE;
+        sprites = Assets.levelSpriteMap.get(lv);
+        float top0 = Assets.HEIGHT - pieceSize - Assets.TOPBAR_HEIGHT;
+        if (areaId == 0) {
             x_bg = Assets.H_SPACE;
-            y_bg = Assets.HEIGHT - size - Assets.TOPBAR_HEIGHT;
-        } else if (id == 1) {
-            x_bg = 2*Assets.H_SPACE + size;
-            y_bg = Assets.HEIGHT - size - Assets.TOPBAR_HEIGHT;
-        } else if (id == 2) {
-            x_bg = Assets.H_SPACE;
-            y_bg = Assets.HEIGHT - 2*size - Assets.TOPBAR_HEIGHT - Assets.SPACE;
+            y_bg = top0;
+        } else if (areaId == 1) {
+            x_bg = 2 * Assets.H_SPACE + pieceSize;
+            y_bg = top0;
         } else {
-            x_bg = 2*Assets.H_SPACE + size;
-            y_bg = Assets.HEIGHT - 2*size - Assets.TOPBAR_HEIGHT - Assets.SPACE;
+            float top1 = top0 - pieceSize - Assets.V_SPACE;
+            if (areaId == 2) {
+                x_bg = Assets.H_SPACE;
+                y_bg = top1;
+            } else {
+                x_bg = 2 * Assets.H_SPACE + pieceSize;
+                y_bg = top1;
+            }
         }
-        setBounds(x_bg, y_bg, size, size);
+        setBounds(x_bg, y_bg, pieceSize, pieceSize);
 
         x0 = Assets.H_SPACE;
         x1 = x0 + spriteSize;
         x2 = x1 + spriteSize;
-        x3 = x2 + Assets.SPACE + spriteSize;
+        x3 = x2 + Assets.H_SPACE + spriteSize;
         x4 = x3 + spriteSize;
         x5 = x4 + spriteSize;
-        y5 = Assets.HEIGHT - Assets.TOPBAR_HEIGHT - spriteSize;
+        y5 = Assets.HEIGHT - Assets.TOPBAR_HEIGHT - spriteSize;;
         y4 = y5 - spriteSize;
         y3 = y4 - spriteSize;
-        y2 = y3 - Assets.SPACE - spriteSize;
+        y2 = y3 - Assets.V_SPACE - spriteSize;
         y1 = y2 - spriteSize;
         y0 = y1 - spriteSize;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getPieceId() {
@@ -94,7 +90,7 @@ public class Area extends Group {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        batch.draw(Assets.areaBg, x_bg, y_bg, size, size);
+        batch.draw(Assets.areaBg, x_bg, y_bg, pieceSize, pieceSize);
         drawFixSprites(batch);
     }
 

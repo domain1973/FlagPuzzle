@@ -2,6 +2,8 @@ package com.ads.puzzle.flag.screen;
 
 import com.ads.puzzle.flag.Assets;
 import com.ads.puzzle.flag.Puzzle;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -11,37 +13,63 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
  */
 public class HelpScreen extends OtherScreen {
     private Image readmeImage;
-    private BaseScreen gameScreen;
+    private BaseScreen baseScreen;
 
     private HelpScreen(Puzzle game) {
         super(game);
         readmeImage = new Image(Assets.readme);
         float imageW = Assets.WIDTH * 20 / 21;
-        readmeImage.setBounds((Assets.WIDTH - imageW) / 2, Assets.TOPBAR_HEIGHT, imageW, imageW * 1.6f);
+        float height = imageW * 1.6f;
+        float maxH = Assets.HEIGHT - 2 * Assets.TOPBAR_HEIGHT;
+        readmeImage.setBounds((Assets.WIDTH - imageW) / 2, Assets.TOPBAR_HEIGHT, imageW, Math.min(maxH, height));
     }
 
     public HelpScreen(Puzzle game, BaseScreen ms) {
         this(game);
-        gameScreen = ms;
+        baseScreen = ms;
     }
 
     @Override
     public void show() {
-        super.show();
-        addActor(readmeImage);
-        returnBtn.addListener(new InputListener() {
-            @Override
-            public boolean touchDown(InputEvent event, float x, float y,
-                                     int pointer, int button) {
-                Assets.playSound(Assets.btnSound);
-                return true;
-            }
+        if (!isShow()) {
+            super.show();
+            addActor(readmeImage);
+            returnBtn.addListener(new InputListener() {
+                @Override
+                public boolean touchDown(InputEvent event, float x, float y,
+                                         int pointer, int button) {
+                    Assets.playSound(Assets.btnSound);
+                    return true;
+                }
 
-            @Override
-            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                getPuzzle().setScreen(gameScreen);
-                super.touchUp(event, x, y, pointer, button);
+                @Override
+                public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                    getPuzzle().setScreen(baseScreen);
+                    super.touchUp(event, x, y, pointer, button);
+                }
+            });
+            setShow(true);
+        } else {
+            Gdx.input.setInputProcessor(getStage());
+            setStarNum();
+        }
+    }
+
+    @Override
+    public void render(float delta) {
+        if (Gdx.input.isKeyPressed(Input.Keys.BACK)) {
+            if (!isBackFlag()) {
+                baseScreen.setBackFlag(true);
+                getPuzzle().setScreen(baseScreen);
+                return;
             }
-        });
+        } else {
+            setBackFlag(false);
+        }
+        super.render(delta);
+    }
+
+    public void setBaseScreen(BaseScreen baseScreen) {
+        this.baseScreen = baseScreen;
     }
 }

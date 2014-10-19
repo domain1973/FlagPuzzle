@@ -72,7 +72,7 @@ public class OtherScreen extends BaseScreen {
 
         BitmapFont font = getOtherFont();
         Label.LabelStyle labelStyle = new Label.LabelStyle(font, Color.WHITE); // 创建一个Label样式，使用默认白色字体
-        String str = "总计:" + getStarNum();
+        String str = getStarNumInfo();
         BitmapFont.TextBounds bounds = font.getBounds(str);
         starLabel = new Label(str, labelStyle);
         starLabel.setPosition(Assets.WIDTH - bounds.width - Assets.TOPBAR_HEIGHT, getY_bar());
@@ -83,8 +83,8 @@ public class OtherScreen extends BaseScreen {
         addActor(star);
     }
 
-    protected Label getStarLabel() {
-        return starLabel;
+    protected String getStarNumInfo() {
+        return "总计:" + getStarNum();
     }
 
     protected int getStarNum() {
@@ -93,5 +93,9 @@ public class OtherScreen extends BaseScreen {
             starNum = starNum + num;
         }
         return starNum;
+    }
+
+    protected void setStarNum() {
+        starLabel.setText(getStarNumInfo());
     }
 }

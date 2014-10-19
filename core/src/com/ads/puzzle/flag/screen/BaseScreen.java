@@ -4,7 +4,6 @@ import com.ads.puzzle.flag.Assets;
 import com.ads.puzzle.flag.Puzzle;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -12,19 +11,19 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 /**
  * Created by Administrator on 2014/7/21.
  */
 public class BaseScreen extends ScreenAdapter {
+    private boolean show;
+    private boolean backFlag;
+    private float y_bar;
     private Stage stage;
     private Batch batch;
     private Puzzle puzzle;
-    private BitmapFont gameFont;
-    private BitmapFont otherFont;
-    private float y_bar;
+    private Image layerBg;
     protected ImageButton returnBtn;
 
     public BaseScreen(Puzzle game) {
@@ -33,12 +32,8 @@ public class BaseScreen extends ScreenAdapter {
         y_bar = Assets.HEIGHT - Assets.TOPBAR_HEIGHT;
         batch = stage.getBatch();
         float scale = Assets.HEIGHT / 854;//default
-        gameFont = new BitmapFont(Gdx.files.internal("puzzle.fnt"),
-                Gdx.files.internal("puzzle.png"), false);
-        gameFont.setScale(scale);
-        otherFont = new BitmapFont(Gdx.files.internal("game.fnt"),
-                Gdx.files.internal("game.png"), false);
-        otherFont.setScale(scale);
+        Assets.gameFont.setScale(scale);
+        Assets.otherFont.setScale(scale);
     }
 
     @Override
@@ -46,6 +41,7 @@ public class BaseScreen extends ScreenAdapter {
         Image bg = new Image(Assets.gameBg);
         bg.setBounds(0, 0, Assets.WIDTH, Assets.HEIGHT);
         addActor(bg);
+        createBackground();
         Gdx.input.setInputProcessor(stage); // 设置输入接收器
     }
 
@@ -53,6 +49,16 @@ public class BaseScreen extends ScreenAdapter {
         returnBtn = new ImageButton(new TextureRegionDrawable(Assets.returnTr));
         returnBtn.setBounds(0, getY_bar(), Assets.TOPBAR_HEIGHT, Assets.TOPBAR_HEIGHT);
         addActor(returnBtn);
+    }
+
+    private void createBackground() {
+        layerBg = new Image(Assets.layerBg);
+        layerBg.setBounds(0, 0, Assets.WIDTH, Assets.HEIGHT - Assets.TOPBAR_HEIGHT);
+        addActor(layerBg);
+    }
+
+    protected void removeLayerBg() {
+        layerBg.remove();
     }
 
     protected void addActor(Actor actor) {
@@ -72,11 +78,11 @@ public class BaseScreen extends ScreenAdapter {
     }
 
     public BitmapFont getGameFont() {
-        return gameFont;
+        return Assets.gameFont;
     }
 
     public BitmapFont getOtherFont() {
-        return otherFont;
+        return Assets.otherFont;
     }
 
     public Stage getStage() {
@@ -89,5 +95,21 @@ public class BaseScreen extends ScreenAdapter {
 
     public float getY_bar() {
         return y_bar;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
+    }
+
+    public boolean isBackFlag() {
+        return backFlag;
+    }
+
+    public void setBackFlag(boolean backFlag) {
+        this.backFlag = backFlag;
     }
 }

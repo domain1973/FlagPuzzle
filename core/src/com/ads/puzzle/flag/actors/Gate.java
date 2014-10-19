@@ -9,25 +9,13 @@ import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
  * Created by Administrator on 2014/7/5.
  */
 public class Gate extends ImageButton {
-    private int id;
-    private int gateNum;
 
-    public Gate(Drawable imageUp, int id, int gateNum) {
+    public Gate(Drawable imageUp, int id) {
         super(imageUp);
-        this.id = id;
-        this.gateNum = gateNum;
         float gateBtnSize = Assets.WIDTH / 5;
-        float gateBtnSpace = gateBtnSize / 5;
-        float y_off = Gdx.graphics.getHeight() / 3;
-        float hspace = y_off / 2;
+        float gateBtnSpace = Assets.WIDTH / 25;
+        float y_off = Assets.HEIGHT / 3;
+        float hspace = Assets.HEIGHT / 6;
         setPosition((id % 4 + 1) * gateBtnSpace + id % 4 * gateBtnSize, Assets.HEIGHT - y_off - id / 4 * hspace);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getGateNum() {
-        return gateNum;
     }
 }

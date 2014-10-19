@@ -12,11 +12,11 @@ public class ChallengeController extends IController {
     private int level;
     private int gateNum;
 
-    public ChallengeController(int level, int gateNum, String name) {
+    public ChallengeController(int lv, int num, String name) {
         setName(name);
-        this.level = level;
-        this.gateNum = gateNum;
-        challenge = new Challenge(level, gateNum);
+        level = lv;
+        gateNum = num;
+        challenge = new Challenge(lv, num);
         addActor(challenge);
     }
 
@@ -31,6 +31,14 @@ public class ChallengeController extends IController {
             challenge = new Challenge(level, gateNum);
             addActor(challenge);
         }
+    }
+
+    public void buildChallenge(int lv, int num) {
+        level = lv;
+        gateNum = num;
+        challenge.remove();
+        challenge = new Challenge(level, gateNum);
+        addActor(challenge);
     }
 
     public int getGateNum() {

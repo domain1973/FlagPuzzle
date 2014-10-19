@@ -10,7 +10,7 @@ public abstract class PEvent {
 
     public abstract void pay();
 
-    public abstract void exit(MainScreen mainScreen);
+    public abstract void exit(MainScreen ms);
 
     public abstract void sos(GameScreen gs);
 
@@ -20,9 +20,14 @@ public abstract class PEvent {
 
     public abstract void share();
 
-    public abstract void install(String url);
+    public abstract void install(Series series);
 
     public abstract boolean isNetworkEnable();
 
     public abstract void save();
+
+    public abstract void about();
+
+    public abstract void netSlowInfo();
+
 }

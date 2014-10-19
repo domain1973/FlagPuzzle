@@ -6,6 +6,7 @@ import com.ads.puzzle.flag.actors.Piece;
 import com.ads.puzzle.flag.controller.AreaController;
 import com.ads.puzzle.flag.controller.IController;
 import com.ads.puzzle.flag.controller.PieceController;
+import com.ads.puzzle.flag.screen.GameScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Rectangle;
@@ -28,13 +29,15 @@ public class PieceListener extends GestureDetector.GestureAdapter {
     private final Area[] areaActors;
     private final SnapshotArray<Actor> pieceActors;
     private Piece downActor;
+    private GameScreen gameScreen;
     private float raw_x;
     private float raw_y;
     private float w;
     private float h;
 
-    public PieceListener(Stage stage) {
+    public PieceListener(Stage stage, GameScreen gs) {
         this.stage = stage;
+        gameScreen = gs;
         touchPoint = new Vector3();
         areaController = (AreaController) stage.getRoot().findActor(IController.AREA_CTRL);
         areaActors = areaController.getAreas();
@@ -45,17 +48,19 @@ public class PieceListener extends GestureDetector.GestureAdapter {
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
         downActor = null;
-        stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
-        for (int i = 0; i < 4; i++) {
-            Piece piece = (Piece) pieceActors.get(i);
-            Rectangle bounds = new Rectangle(piece.getX(), piece.getY(), piece.getWidth(), piece.getHeight());
-            if (bounds.contains(touchPoint.x, touchPoint.y)) {
-                downActor = piece;
-                raw_x = downActor.getX();
-                raw_y = downActor.getY();
-                w = downActor.getWidth();
-                h = downActor.getHeight();
-                break;
+        if (!gameScreen.isSuspend()) {
+            stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
+            for (int i = 0; i < 4; i++) {
+                Piece piece = (Piece) pieceActors.get(i);
+                Rectangle bounds = new Rectangle(piece.getX(), piece.getY(), piece.getWidth(), piece.getHeight());
+                if (bounds.contains(touchPoint.x, touchPoint.y)) {
+                    downActor = piece;
+                    raw_x = downActor.getX();
+                    raw_y = downActor.getY();
+                    w = downActor.getWidth();
+                    h = downActor.getHeight();
+                    break;
+                }
             }
         }
         return super.touchDown(x, y, pointer, button);
@@ -63,14 +68,16 @@ public class PieceListener extends GestureDetector.GestureAdapter {
 
     @Override
     public boolean tap(float x, float y, int count, int button) {
-        stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0)); // 坐标转化
-        for (Actor actor : pieceActors) {
-            Piece piece = (Piece) actor;
-            Rectangle bounds = new Rectangle(piece.getX(), piece.getY(), piece.getWidth(), piece.getHeight());
-            if (bounds.contains(touchPoint.x, touchPoint.y) && piece.getArea() > -1) {
-                piece.changeOrientation();//快速点击改变块方位
-                Assets.playSound(Assets.btnSound);
-                break;
+        if (!gameScreen.isSuspend()) {
+            stage.getCamera().unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0)); // 坐标转化
+            for (Actor actor : pieceActors) {
+                Piece piece = (Piece) actor;
+                Rectangle bounds = new Rectangle(piece.getX(), piece.getY(), piece.getWidth(), piece.getHeight());
+                if (bounds.contains(touchPoint.x, touchPoint.y) && piece.getArea() > -1) {
+                    piece.changeOrientation();//快速点击改变块方位
+                    Assets.playSound(Assets.btnSound);
+                    break;
+                }
             }
         }
         return super.tap(x, y, count, button);

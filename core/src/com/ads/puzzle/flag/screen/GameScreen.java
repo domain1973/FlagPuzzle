@@ -2,7 +2,6 @@ package com.ads.puzzle.flag.screen;
 
 import com.ads.puzzle.flag.Answer;
 import com.ads.puzzle.flag.Assets;
-import com.ads.puzzle.flag.Puzzle;
 import com.ads.puzzle.flag.Settings;
 import com.ads.puzzle.flag.actors.Area;
 import com.ads.puzzle.flag.actors.Piece;
@@ -15,6 +14,7 @@ import com.ads.puzzle.flag.listener.PieceListener;
 import com.ads.puzzle.flag.window.ResultWin;
 import com.ads.puzzle.flag.window.SupsendWin;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -25,6 +25,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
+import com.badlogic.gdx.utils.Array;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -34,47 +35,45 @@ import java.util.concurrent.TimeUnit;
  * Created by Administrator on 2014/6/24.
  */
 public class GameScreen extends BaseScreen {
-    private int level;
-    private int gateNum;
-    private AreaController areaCtrl;
-    private PieceController pieceCtrl;
-    private ChallengeController challengeCtrl;
-
-    private PieceDetector gestureDetector;
-    private boolean openResultWin;
-    private boolean isPass;
-    private boolean isSuspend;
-    private SupsendWin gameWindow;
-    private InputMultiplexer multiplexer;
-    private Actor[] pieces;
-    private boolean isUsedHelp;
-    private boolean isUsingHelp;
-
-    private int areaId;
-    private int seconds;
-    private String timeStr;
-    private boolean isShow;
-    private int starNum;
-    private Label labTime;
-    private Label labCount;
-
     private ScheduledExecutorService executorGateEnd;
     private ScheduledExecutorService executStarCount;
     private ScheduledExecutorService executTime;
-    private ParticleEffect effect;
 
-    public GameScreen(Puzzle puzzle, int lv, int num) {
-        super(puzzle);
-        level = lv;
-        gateNum = num;
+    private ParticleEffect effect;
+    private GateScreen gateScreen;
+    private AreaController areaCtrl;
+    private PieceController pieceCtrl;
+    private ChallengeController challengeCtrl;
+    private PieceDetector gestureDetector;
+    private SupsendWin supsendWin;
+    private InputMultiplexer multiplexer;
+    private Actor[] pieces;
+    private String timeStr;
+    private Label labTime;
+    private Label labCount;
+
+    private boolean openResultWin;
+    private boolean isPass;
+    private boolean isSuspend;
+    private boolean isUsedHelp;
+    private boolean isUsingHelp;
+    private int level;
+    private int gateNum;
+    private int areaId;
+    private int seconds;
+    private int starNum;
+
+    public GameScreen(GateScreen gs) {
+        super(gs.getPuzzle());
+        gateNum = -1;
+        gateScreen = gs;
         executorGateEnd = Executors.newSingleThreadScheduledExecutor();
-        isShow = true;
         isUsingHelp = true;
     }
 
     @Override
     public void show() {
-        if (isShow) {
+        if (!isShow()) {
             super.show();
             timeStr = "00:00";
             areaCtrl = new AreaController(level, IController.AREA_CTRL);
@@ -84,19 +83,34 @@ public class GameScreen extends BaseScreen {
             pieces = pieceCtrl.getChildren().begin();
             challengeCtrl = new ChallengeController(level, gateNum, IController.CHALLENGE_CTRL);
             addActor(challengeCtrl);
-
-            multiplexer = new InputMultiplexer(); // 多输入接收器
-            gestureDetector = new PieceDetector(getStage(), new PieceListener(getStage()));
-            multiplexer.addProcessor(gestureDetector); // 添加手势识别
-            multiplexer.addProcessor(getStage()); // 添加舞台
-            Gdx.input.setInputProcessor(multiplexer); // 设置多输入接收器为接收器
-
             createTopBar();
             addLabels();
             initEffect();
             createTimer();
-            isShow = false;
+            setShow(true);
         }
+        multiplexer = new InputMultiplexer(); // 多输入接收器
+        gestureDetector = new PieceDetector(getStage(), new PieceListener(getStage(), GameScreen.this));
+        multiplexer.addProcessor(gestureDetector); // 添加手势识别
+        multiplexer.addProcessor(getStage()); // 添加舞台
+        Gdx.input.setInputProcessor(multiplexer); // 设置多输入接收器为接收器
+    }
+
+    private void buildNewGate(int num) {
+        int lv = num / Answer.GATE_MAX;
+        if (lv < Assets.LEVEL_MAX) {
+            if (gateNum != -1 && num != gateNum) {
+                refreshGame();
+                if (challengeCtrl != null) {
+                    challengeCtrl.buildChallenge(lv, num);
+                }
+                if (areaCtrl != null) {
+                    areaCtrl.buildArea(lv);
+                }
+            }
+        }
+        gateNum = num;
+        level = lv;
     }
 
     private void createTopBar() {
@@ -154,8 +168,8 @@ public class GameScreen extends BaseScreen {
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 suspendTimer();
-                gameWindow = new SupsendWin(getPuzzle(), getGameFont(), GameScreen.this, level);
-                addActor(gameWindow);
+                supsendWin = new SupsendWin(GameScreen.this, level);
+                addActor(supsendWin);
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -171,7 +185,8 @@ public class GameScreen extends BaseScreen {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                getPuzzle().setScreen(new GateScreen(getPuzzle(), level));
+                gateScreen.buildGateImage(level);
+                getPuzzle().setScreen(gateScreen);
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -188,7 +203,8 @@ public class GameScreen extends BaseScreen {
         labCount.setPosition(Assets.WIDTH - 3 * Assets.TOPBAR_HEIGHT - w / 3, Assets.HEIGHT - Assets.TOPBAR_HEIGHT / 2);
         addActor(labCount);
 
-        Label c = new Label("挑战", new Label.LabelStyle(getGameFont(), Color.YELLOW));
+        String s = "挑战";
+        Label c = new Label(s, new Label.LabelStyle(getGameFont(), Color.YELLOW));
         c.setPosition(Assets.SPRITESIZE * 3 / 2, Assets.TOPBAR_HEIGHT);
         addActor(c);
     }
@@ -213,6 +229,14 @@ public class GameScreen extends BaseScreen {
 
     @Override
     public void render(float delta) {
+        if (Gdx.input.isKeyPressed(Input.Keys.BACK)) {
+            if (!isSuspend && isClosedResultWin()) {
+                gateScreen.setBackFlag(true);
+                gateScreen.buildGateImage(level);
+                getPuzzle().setScreen(gateScreen);
+                return;
+            }
+        }
         super.render(delta);
         handleHelp();
         handlePass();
@@ -270,6 +294,16 @@ public class GameScreen extends BaseScreen {
         }
     }
 
+    private boolean isClosedResultWin() {
+        Array<Actor> actors = getStage().getActors();
+        for (Actor actor : actors) {
+            if (actor instanceof ResultWin) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private void computerStarNum() {
         int minute = getSeconds() / 60;
         if (minute <= Answer.GRADE_1) {
@@ -282,7 +316,9 @@ public class GameScreen extends BaseScreen {
             starNum = 0;
         }
         if (Answer.gateStars.size() > challengeCtrl.getGateNum()) {//可能重玩
-            Answer.gateStars.set(challengeCtrl.getGateNum(), starNum);
+            if (starNum >  0) {
+                Answer.gateStars.set(challengeCtrl.getGateNum(), starNum);
+            }
         } else {
             Answer.gateStars.add(starNum);
         }
@@ -345,10 +381,6 @@ public class GameScreen extends BaseScreen {
     public void pause() {
     }
 
-    public int getLevel() {
-        return level;
-    }
-
     public void return2init() {
         isPass = false;
         if (!executTime.isShutdown()) {
@@ -374,7 +406,16 @@ public class GameScreen extends BaseScreen {
         pieceCtrl.handler();
     }
 
-    public void setGateNum(int gateNum) {
-        this.gateNum = gateNum;
+    public void setGateNum(int num) {
+        buildNewGate(num);
+        gateNum = num;
+    }
+
+    public boolean isSuspend() {
+        return isSuspend;
+    }
+
+    public GateScreen getGateScreen() {
+        return gateScreen;
     }
 }

@@ -2,17 +2,15 @@ package com.ads.puzzle.flag;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Administrator on 2014/9/27.
  */
 public class Series {
-
     private Image image;
 
-    private Image readmeImage;
+    private String name;
+
+    private String detail;
 
     private String url;
 
@@ -25,12 +23,21 @@ public class Series {
         return this;
     }
 
-    public Image getReadmeImage() {
-        return readmeImage;
+    public String getName() {
+        return name;
     }
 
-    public Series setReadmeImage(Image readmeImage) {
-        this.readmeImage = readmeImage;
+    public Series setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public Series setDetail(String detail) {
+        this.detail = detail;
         return this;
     }
 

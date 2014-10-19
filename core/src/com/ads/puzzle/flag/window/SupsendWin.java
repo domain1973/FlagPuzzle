@@ -3,7 +3,6 @@ package com.ads.puzzle.flag.window;
 import com.ads.puzzle.flag.Assets;
 import com.ads.puzzle.flag.Puzzle;
 import com.ads.puzzle.flag.Settings;
-import com.ads.puzzle.flag.screen.AboutScreen;
 import com.ads.puzzle.flag.screen.GameScreen;
 import com.ads.puzzle.flag.screen.GateScreen;
 import com.ads.puzzle.flag.screen.HelpScreen;
@@ -30,10 +29,10 @@ public class SupsendWin extends BaseWin {
     private Image noMusic;
     private Image noSound;
 
-    public SupsendWin(Puzzle p, BitmapFont ft, GameScreen gs, int lv) {
-        super("", new Window.WindowStyle(ft, Color.WHITE, new TextureRegionDrawable(
+    public SupsendWin(GameScreen gs, int lv) {
+        super("", new Window.WindowStyle(gs.getGameFont(), Color.WHITE, new TextureRegionDrawable(
                 Assets.gameBg)));
-        puzzle = p;
+        puzzle = gs.getPuzzle();
         gameScreen = gs;
         level = lv;
         create();
@@ -69,7 +68,7 @@ public class SupsendWin extends BaseWin {
         noSound.setBounds(sound.getX(), sound.getY(), btnSize, btnSize);
         ImageButton about = new ImageButton(new TextureRegionDrawable(Assets.about), new TextureRegionDrawable(Assets.about));
         about.setBounds(x * 3, y2, btnSize, btnSize);
-        ImageButton help = new ImageButton(new TextureRegionDrawable(Assets.help), new TextureRegionDrawable(Assets.help));
+        final ImageButton help = new ImageButton(new TextureRegionDrawable(Assets.help), new TextureRegionDrawable(Assets.help));
         help.setBounds(x * 4, y2, btnSize, btnSize);
         Gdx.input.setInputProcessor(gameScreen.getStage());
 
@@ -173,7 +172,7 @@ public class SupsendWin extends BaseWin {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                puzzle.setScreen(new AboutScreen(puzzle, gameScreen));
+                puzzle.getPEvent().about();
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -187,7 +186,9 @@ public class SupsendWin extends BaseWin {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                puzzle.setScreen(new HelpScreen(puzzle, gameScreen));
+                HelpScreen helpScreen = puzzle.getMainScreen().getHelpScreen();
+                helpScreen.setBaseScreen(gameScreen);
+                puzzle.setScreen(helpScreen);
                 super.touchUp(event, x, y, pointer, button);
             }
         });
@@ -201,7 +202,11 @@ public class SupsendWin extends BaseWin {
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                puzzle.setScreen(new GateScreen(puzzle, level));
+                layerBg.remove();
+                SupsendWin.this.remove();
+                gameScreen.resumeTimer();
+                gameScreen.getGateScreen().buildGateImage(level);
+                puzzle.setScreen(gameScreen.getGateScreen());
                 super.touchUp(event, x, y, pointer, button);
             }
         });

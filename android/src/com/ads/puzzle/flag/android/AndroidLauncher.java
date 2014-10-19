@@ -1,10 +1,10 @@
 package com.ads.puzzle.flag.android;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -17,9 +17,6 @@ import com.ads.puzzle.flag.Puzzle;
 import com.ads.puzzle.flag.Settings;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.baidu.inf.iis.bcs.BaiduBCS;
-import com.baidu.inf.iis.bcs.auth.BCSCredentials;
-import com.baidu.inf.iis.bcs.request.GetObjectRequest;
 
 import net.umipay.android.GameParamInfo;
 import net.umipay.android.UmiPaySDKManager;
@@ -34,24 +31,13 @@ import net.youmi.android.banner.AdView;
 import net.youmi.android.spot.SpotDialogListener;
 import net.youmi.android.spot.SpotManager;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AndroidLauncher extends AndroidApplication implements InitCallbackListener,
         OrderReceiverListener {
-    public final static int BUYSTARNUM = 10;
-    private final static String host = "bcs.duapp.com";
-    private final static String accessKey = "NESAXkQp7S1SIeqUncUnTCIl";
-    private final static String secretKey = "ZIQ2NE02RNWimzjyGI0Yh8NF4cAjouLf";
-    private final static String bucket = "ads-series";
-    private final static String path = "/mnt/sdcard/";
-
-    private String adAtlasStr = "/ad.atlas";
-    private File adAtlas = new File(path + "ad.atlas");
-    private String urlStr = "/url.txt";
-    private File url = new File(path + "url.txt");
-
+    public static int BUYSTARNUM = 10;
+    private PEventImpl pEvent;
     private boolean initFail;
 
     @Override
@@ -59,7 +45,8 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         super.onCreate(savedInstanceState);
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         // 创建libgdx视图
-        View gameView = initializeForView(new Puzzle(new PEventImpl(AndroidLauncher.this)), config);
+        pEvent = new PEventImpl(AndroidLauncher.this);
+        View gameView = initializeForView(new Puzzle(pEvent), config);
         // 创建布局
         RelativeLayout layout = new RelativeLayout(this);
         // 添加libgdx视图
@@ -67,12 +54,6 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         setContentView(layout);
 
         loadGameConfig();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                initBucket();
-            }
-        }).start();
         AdManager.getInstance(getContext()).setUserDataCollect(true);
         if (Settings.adManager) {
             addAdManager();
@@ -141,15 +122,8 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
             public void OnPayProcess(int code) {
                 switch (code) {
                     case UmipaySDKStatusCode.PAY_PROCESS_SUCCESS:
-                        //充值完成，不等于充值成功，实际充值结果以订单回调接口为准
-                        Toast.makeText(getApplicationContext(), "购买完成！请耐心等候充值结果",
-                                Toast.LENGTH_SHORT).show();
-                        Settings.adManager = false;
-                        Settings.helpNum = Settings.helpNum + BUYSTARNUM;
                         break;
                     case UmipaySDKStatusCode.PAY_PROCESS_FAIL:
-                        Toast.makeText(getApplicationContext(), "取消购买！",
-                                Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -172,8 +146,6 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
         initFail = false;
         if (code == UmipaySDKStatusCode.SUCCESS) {
             // 初始化成功后，即可正常调用充值
-            Toast.makeText(this, "初始化成功",
-                    Toast.LENGTH_SHORT).show();
         } else if (code == UmipaySDKStatusCode.INIT_FAIL) {
             // 初始化失败，一般在这里提醒用户网络有问题，反馈，等等问题
             Toast.makeText(this, "初始化失败", Toast.LENGTH_SHORT).show();
@@ -200,34 +172,17 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
             try {
                 //TODO 对订单order进行结算
                 if (newOrder.getStatus() == 1) {
-                    //注意，转成毫秒需要 乘以长整型1000L
-                    String payTime = DateFormat.format("yyyy-MM-dd kk:mm:ss", newOrder.getPayTime_s() * 1000L).toString();
-                    final String tips = String.format(
-                            "支付订单号:%s \n" +
-                                    "外部订单号:%s \n" +
-                                    "用户标记:%s \n" +
-                                    "订单状态:%s \n" +
-                                    "支付通道:%s \n" +
-                                    "获得金币:%s \n" +
-                                    "金额:%s￥ \n" +
-                                    "支付时间:%s \n" +
-                                    "自定义数据:%s \n",
-                            newOrder.getOid(),
-                            newOrder.getTradeNo(),
-                            newOrder.getRid(),
-                            newOrder.getStatus() + "",
-                            newOrder.getPayType(),
-                            newOrder.getAmount() + "",
-                            newOrder.getRealMoney() + "",
-                            payTime,
-                            newOrder.getCData()
-                    );
-                    //在主线程更新界面
-                    new Handler(getMainLooper()).post(new Runnable() {
-                        @Override
+                    Settings.adManager = false;
+                    Settings.helpNum = Settings.helpNum + BUYSTARNUM;
+                    pEvent.save();
+                    handler.post(new Runnable() {
                         public void run() {
-//                            String newtext = tips + mOrderResult_tv.getText().toString();
-//                            mOrderResult_tv.setText(newtext);
+                            new AlertDialog.Builder(AndroidLauncher.this).setTitle("迪士尼迷宫").setMessage("购买完成！请重新启动游戏,去广告才有效.")
+                                    .setNegativeButton("关闭", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                        }
+                                    }).setIcon(R.drawable.xiaozi).create().show();
                         }
                     });
                     //添加到已处理订单列表
@@ -254,29 +209,5 @@ public class AndroidLauncher extends AndroidApplication implements InitCallbackL
             }
         }
         Settings.adManager = sharedata.getBoolean("adManager", true);
-    }
-
-    private void initBucket() {
-        try {
-            BCSCredentials credentials = new BCSCredentials(accessKey, secretKey);
-            BaiduBCS baiduBCS = new BaiduBCS(credentials, host);
-            baiduBCS.setDefaultEncoding("UTF-8"); // Default UTF-8
-            getObjectWithDestFile(baiduBCS, adAtlasStr, adAtlas);
-            getObjectWithDestFile(baiduBCS, urlStr, url);
-            for (int i=1; i<Integer.MAX_VALUE; i++) {
-                try {
-                    getObjectWithDestFile(baiduBCS, "/ad" + i + ".png" , new File(path + "ad" + i + ".png"));
-                } catch (Exception x) {
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void getObjectWithDestFile(BaiduBCS baiduBCS, String name, File file) {
-        GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, name);
-        baiduBCS.getObject(getObjectRequest, file);
     }
 }

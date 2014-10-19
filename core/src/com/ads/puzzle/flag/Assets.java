@@ -17,13 +17,13 @@
 package com.ads.puzzle.flag;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,10 +31,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Assets {
+    public static AssetManager assetManager;
+
     public static Music musicbg;
     public static Sound btnSound;
     public static Sound starSound;
-
     public static TextureRegion gameBg;
     public static TextureRegion theme;
     public static TextureRegion winBg;
@@ -45,7 +46,6 @@ public class Assets {
     public static TextureRegion star;
     public static TextureRegion star_null;
     public static TextureRegion readme;
-    public static TextureRegion aboutInfo;
     public static TextureRegion help;
     public static TextureRegion share;
     public static TextureRegion recommend;
@@ -68,9 +68,6 @@ public class Assets {
     public static TextureRegion resetGameBtn;
     public static TextureRegion levelPreBtn;
     public static TextureRegion levelNextBtn;
-    public static TextureRegion downloadBtn;
-    public static TextureRegion downloadBtnDown;
-    public static TextureRegion closeBtn;
     public static TextureRegion gate_0star;
     public static TextureRegion gate_1star;
     public static TextureRegion gate_2star;
@@ -78,15 +75,10 @@ public class Assets {
     public static TextureRegion gate_lock;
     public static TextureRegion lock;
     public static TextureRegion[] cubes;
-
-    public static List<Sprite> levels;
-    public static Map<Integer, List<Sprite>> levelSpriteMap;//关卡精灵图标
-    public static float SPRITESIZE;///关卡精灵图标大小
-    public static Sprite[] pieces;
     public static float TOPBAR_HEIGHT;//顶部按钮条的高度
     public static float WIDTH;
     public static float HEIGHT;
-    public static float SPACE;
+    public static float V_SPACE;
     public static float H_SPACE;
     public static float PIECE_SIZE;
     public static float SPRITE_SIZE;
@@ -94,16 +86,34 @@ public class Assets {
     public static float LEVEL_IMAGE_SIZE;
     public static float LEVEL_IMAGE_OFF_SIZE;
     public static int LEVEL_MAX = 6;
-    public static List<Series> seriesList;
+    public static float SPRITESIZE;///关卡精灵图标大小
+
+    public static List<Sprite> levels;
+    public static Map<Integer, List<Sprite>> levelSpriteMap;//关卡精灵图标
+    public static Sprite[] pieces;
+    public static BitmapFont gameFont;
+    public static BitmapFont otherFont;
 
     public static void load() {
+        assetManager = new AssetManager();
+        assetManager.load("p.atlas", TextureAtlas.class);
+        assetManager.load("puzzle.fnt", BitmapFont.class);
+        assetManager.load("game.fnt", BitmapFont.class);
+        assetManager.load("data/musicbg.mp3", Music.class); //加载背景音乐
+        assetManager.load("data/btn.wav", Sound.class);
+        assetManager.load("data/star.mp3", Sound.class);
+        assetManager.finishLoading();
+        gameFont = assetManager.get("puzzle.fnt", BitmapFont.class);
+        otherFont = assetManager.get("game.fnt", BitmapFont.class);
+        btnSound = assetManager.get("data/btn.wav", Sound.class);
+        starSound = assetManager.get("data/star.mp3", Sound.class);
+        musicbg = assetManager.get("data/musicbg.mp3", Music.class);    //加载背景音乐
         initConstants();
-        TextureAtlas atlas = new TextureAtlas("p.atlas");
+        TextureAtlas atlas = assetManager.get("p.atlas", TextureAtlas.class);
         loadBmps(atlas);
         createLevels(atlas);
         createLevelSprite(atlas);
         creteMagicCubes(atlas);
-        loadAd();
         loadMusic();
     }
 
@@ -116,9 +126,8 @@ public class Assets {
         SPRITE_SIZE = PIECE_SIZE / 3;
         LEVEL_IMAGE_SIZE = WIDTH;
         LEVEL_IMAGE_OFF_SIZE = WIDTH / 7;
-        SPACE = HEIGHT / 72;
-        H_SPACE = (Assets.WIDTH - 2*Assets.PIECE_SIZE)/3;
-
+        V_SPACE = HEIGHT / 72;
+        H_SPACE = (Assets.WIDTH - 2 * Assets.PIECE_SIZE) / 3;
     }
 
     private static void loadBmps(TextureAtlas atlas) {
@@ -130,7 +139,6 @@ public class Assets {
         areaBg = atlas.findRegion("area");
         resultBg = atlas.findRegion("resultbg");
         readme = atlas.findRegion("readme");
-        aboutInfo = atlas.findRegion("aboutinfo");
 
         suspend = atlas.findRegion("suspend");
         share = atlas.findRegion("share");
@@ -152,9 +160,6 @@ public class Assets {
         forbid = atlas.findRegion("forbid");
         lock = atlas.findRegion("lock");
         exit = atlas.findRegion("exit");
-        downloadBtn = atlas.findRegion("download");
-        downloadBtnDown = atlas.findRegion("downloaddown");
-        closeBtn = atlas.findRegion("close");
         playBtn = atlas.findRegion("playbtn");
         playBtnDown = atlas.findRegion("playbtndown");
         resetGameBtn = atlas.findRegion("resetgamebtn");
@@ -179,12 +184,12 @@ public class Assets {
     }
 
     private static void createLevelSprite(TextureAtlas atlas) {
-        SPRITESIZE = (int) WIDTH / 7;
+        SPRITESIZE = Assets.PIECE_SIZE / 3;
         levelSpriteMap = new HashMap<Integer, List<Sprite>>();
         for (int i = 0; i < LEVEL_MAX; i++) {
             List<Sprite> sprites = new ArrayList<Sprite>();
             for (int m = 0; m < 5; m++) {
-                String spriteName = String.valueOf((i+1) * 100 + m);
+                String spriteName = String.valueOf((i + 1) * 100 + m);
                 Sprite s1 = atlas.createSprite(spriteName);
                 sprites.add(s1);
             }
@@ -203,57 +208,15 @@ public class Assets {
         }
     }
 
-    private static void loadAd() {
-        try {
-            seriesList = new ArrayList<Series>();
-            //动态获取系列、说明、图标
-            FileHandle packFile = Gdx.files.external("ad.atlas");
-            TextureAtlas atlas = new TextureAtlas(packFile);
-            List<Sprite> spriteNames = new ArrayList<Sprite>();
-            List<Sprite> spriteReadmes = new ArrayList<Sprite>();
-            for (int i = 0; i < Integer.MAX_VALUE; i++) {
-                Sprite s = atlas.createSprite("series" + i);
-                Sprite r = atlas.createSprite("readme" + i);
-                if (s == null) {
-                    break;
-                }
-                spriteNames.add(s);
-                spriteReadmes.add(r);
-            }
-            FileHandle filehandle = Gdx.files.external("url.txt");
-            String[] urls = filehandle.readString("UTF-8").split("\r\n");
-            for (int i = 0; i < spriteNames.size(); i++) {
-                Series series = new Series().setImage(new Image(spriteNames.get(i)))
-                        .setReadmeImage(new Image(spriteReadmes.get(i))).setUrl(getUrl(urls, "series" + i));
-                seriesList.add(series);
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static String getUrl(String[] urls, String name) {
-        for(String url : urls) {
-            if (url.split("=")[0].equals(name)) {
-                return url.split("=")[1];
-            }
-        }
-        return null;
-    }
-
     public static void playSound(Sound sound) {
         if (Settings.soundEnabled) sound.play(1);
     }
 
     private static void loadMusic() {
-        musicbg = Gdx.audio.newMusic(Gdx.files.internal("data/musicbg.mp3"));    //加载背景音乐
         musicbg.setLooping(true);  //设置背景音乐循环播放
         musicbg.setVolume(0.5f);   //设置音量
-        if (Settings.musicEnabled)
+        if (Settings.musicEnabled) {
             musicbg.play();        //播放背景音乐
-
-        btnSound = Gdx.audio.newSound(Gdx.files.internal("data/btn.wav")); //加载跳跃时候的音效
-        starSound = Gdx.audio.newSound(Gdx.files.internal("data/star.mp3"));
+        }
     }
-
 }
